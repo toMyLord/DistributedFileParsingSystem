@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/DistributedFileParsing.dir/main.cpp.o  -o DistributedFileParsing 
