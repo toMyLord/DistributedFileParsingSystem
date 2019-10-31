@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/FileParsing_main.cpp
+iostream
+-
+src/file_parsing.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h
+parsing_state.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.h
+wating_state.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.h
+state.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/state.h
+recording_log.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/state.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.h
+state.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/state.h
+
