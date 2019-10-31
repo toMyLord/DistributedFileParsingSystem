@@ -179,6 +179,50 @@
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/FileParsing_main.cpp">
 			<Option target="FileParsing"/>
 		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.cpp">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.cpp">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.h">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.cpp">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.cpp">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.h">
+			<Option target="FileParsing"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp">
+			<Option target="FileParsing"/>
+			<Option target="WorkStation"/>
+			<Option target="TaskDistribution"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h">
+			<Option target="FileParsing"/>
+			<Option target="WorkStation"/>
+			<Option target="TaskDistribution"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.cpp">
+			<Option target="FileParsing"/>
+			<Option target="WorkStation"/>
+			<Option target="TaskDistribution"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h">
+			<Option target="FileParsing"/>
+			<Option target="WorkStation"/>
+			<Option target="TaskDistribution"/>
+		</Unit>
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/TaskDistribution_main.cpp">
 			<Option target="TaskDistribution"/>
 		</Unit>

@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir/src/client.cpp.o"
+  "/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir/src/server.cpp.o"
   "/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/WorkStation_main.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

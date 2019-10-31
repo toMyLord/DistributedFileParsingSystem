@@ -176,6 +176,180 @@ fileparsing/FileParsing_main.cpp.s:
 	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.s
 .PHONY : fileparsing/FileParsing_main.cpp.s
 
+fileparsing/src/file_parsing.o: fileparsing/src/file_parsing.cpp.o
+
+.PHONY : fileparsing/src/file_parsing.o
+
+# target to build an object file
+fileparsing/src/file_parsing.cpp.o:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o
+.PHONY : fileparsing/src/file_parsing.cpp.o
+
+fileparsing/src/file_parsing.i: fileparsing/src/file_parsing.cpp.i
+
+.PHONY : fileparsing/src/file_parsing.i
+
+# target to preprocess a source file
+fileparsing/src/file_parsing.cpp.i:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.i
+.PHONY : fileparsing/src/file_parsing.cpp.i
+
+fileparsing/src/file_parsing.s: fileparsing/src/file_parsing.cpp.s
+
+.PHONY : fileparsing/src/file_parsing.s
+
+# target to generate assembly for a file
+fileparsing/src/file_parsing.cpp.s:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.s
+.PHONY : fileparsing/src/file_parsing.cpp.s
+
+fileparsing/src/parsing_state.o: fileparsing/src/parsing_state.cpp.o
+
+.PHONY : fileparsing/src/parsing_state.o
+
+# target to build an object file
+fileparsing/src/parsing_state.cpp.o:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o
+.PHONY : fileparsing/src/parsing_state.cpp.o
+
+fileparsing/src/parsing_state.i: fileparsing/src/parsing_state.cpp.i
+
+.PHONY : fileparsing/src/parsing_state.i
+
+# target to preprocess a source file
+fileparsing/src/parsing_state.cpp.i:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.i
+.PHONY : fileparsing/src/parsing_state.cpp.i
+
+fileparsing/src/parsing_state.s: fileparsing/src/parsing_state.cpp.s
+
+.PHONY : fileparsing/src/parsing_state.s
+
+# target to generate assembly for a file
+fileparsing/src/parsing_state.cpp.s:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.s
+.PHONY : fileparsing/src/parsing_state.cpp.s
+
+fileparsing/src/recording_log.o: fileparsing/src/recording_log.cpp.o
+
+.PHONY : fileparsing/src/recording_log.o
+
+# target to build an object file
+fileparsing/src/recording_log.cpp.o:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o
+.PHONY : fileparsing/src/recording_log.cpp.o
+
+fileparsing/src/recording_log.i: fileparsing/src/recording_log.cpp.i
+
+.PHONY : fileparsing/src/recording_log.i
+
+# target to preprocess a source file
+fileparsing/src/recording_log.cpp.i:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.i
+.PHONY : fileparsing/src/recording_log.cpp.i
+
+fileparsing/src/recording_log.s: fileparsing/src/recording_log.cpp.s
+
+.PHONY : fileparsing/src/recording_log.s
+
+# target to generate assembly for a file
+fileparsing/src/recording_log.cpp.s:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.s
+.PHONY : fileparsing/src/recording_log.cpp.s
+
+fileparsing/src/wating_state.o: fileparsing/src/wating_state.cpp.o
+
+.PHONY : fileparsing/src/wating_state.o
+
+# target to build an object file
+fileparsing/src/wating_state.cpp.o:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o
+.PHONY : fileparsing/src/wating_state.cpp.o
+
+fileparsing/src/wating_state.i: fileparsing/src/wating_state.cpp.i
+
+.PHONY : fileparsing/src/wating_state.i
+
+# target to preprocess a source file
+fileparsing/src/wating_state.cpp.i:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.i
+.PHONY : fileparsing/src/wating_state.cpp.i
+
+fileparsing/src/wating_state.s: fileparsing/src/wating_state.cpp.s
+
+.PHONY : fileparsing/src/wating_state.s
+
+# target to generate assembly for a file
+fileparsing/src/wating_state.cpp.s:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.s
+.PHONY : fileparsing/src/wating_state.cpp.s
+
+src/client.o: src/client.cpp.o
+
+.PHONY : src/client.o
+
+# target to build an object file
+src/client.cpp.o:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/src/client.cpp.o
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/src/client.cpp.o
+	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/src/client.cpp.o
+.PHONY : src/client.cpp.o
+
+src/client.i: src/client.cpp.i
+
+.PHONY : src/client.i
+
+# target to preprocess a source file
+src/client.cpp.i:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/src/client.cpp.i
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/src/client.cpp.i
+	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/src/client.cpp.i
+.PHONY : src/client.cpp.i
+
+src/client.s: src/client.cpp.s
+
+.PHONY : src/client.s
+
+# target to generate assembly for a file
+src/client.cpp.s:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/src/client.cpp.s
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/src/client.cpp.s
+	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/src/client.cpp.s
+.PHONY : src/client.cpp.s
+
+src/server.o: src/server.cpp.o
+
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.cpp.o:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/src/server.cpp.o
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/src/server.cpp.o
+	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/src/server.cpp.o
+.PHONY : src/server.cpp.o
+
+src/server.i: src/server.cpp.i
+
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.cpp.i:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/src/server.cpp.i
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/src/server.cpp.i
+	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/src/server.cpp.i
+.PHONY : src/server.cpp.i
+
+src/server.s: src/server.cpp.s
+
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.cpp.s:
+	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/src/server.cpp.s
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/src/server.cpp.s
+	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/src/server.cpp.s
+.PHONY : src/server.cpp.s
+
 taskdistribution/TaskDistribution_main.o: taskdistribution/TaskDistribution_main.cpp.o
 
 .PHONY : taskdistribution/TaskDistribution_main.o
@@ -244,6 +418,24 @@ help:
 	@echo "... fileparsing/FileParsing_main.o"
 	@echo "... fileparsing/FileParsing_main.i"
 	@echo "... fileparsing/FileParsing_main.s"
+	@echo "... fileparsing/src/file_parsing.o"
+	@echo "... fileparsing/src/file_parsing.i"
+	@echo "... fileparsing/src/file_parsing.s"
+	@echo "... fileparsing/src/parsing_state.o"
+	@echo "... fileparsing/src/parsing_state.i"
+	@echo "... fileparsing/src/parsing_state.s"
+	@echo "... fileparsing/src/recording_log.o"
+	@echo "... fileparsing/src/recording_log.i"
+	@echo "... fileparsing/src/recording_log.s"
+	@echo "... fileparsing/src/wating_state.o"
+	@echo "... fileparsing/src/wating_state.i"
+	@echo "... fileparsing/src/wating_state.s"
+	@echo "... src/client.o"
+	@echo "... src/client.i"
+	@echo "... src/client.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 	@echo "... taskdistribution/TaskDistribution_main.o"
 	@echo "... taskdistribution/TaskDistribution_main.i"
 	@echo "... taskdistribution/TaskDistribution_main.s"

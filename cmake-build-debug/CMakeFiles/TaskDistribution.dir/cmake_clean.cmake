@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TaskDistribution.dir/taskdistribution/TaskDistribution_main.cpp.o"
+  "CMakeFiles/TaskDistribution.dir/src/client.cpp.o"
+  "CMakeFiles/TaskDistribution.dir/src/server.cpp.o"
   "TaskDistribution.pdb"
   "TaskDistribution"
 )
