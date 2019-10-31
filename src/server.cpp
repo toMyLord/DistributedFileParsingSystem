@@ -4,8 +4,14 @@
 
 #include "server.h"
 
-Server::Server(int port, int size): listen_port(port), listen_size(10) {
+Server::Server(int port, int size): listen_port(port), listen_size(size) {
+    time_t curtime;
+
     this->Init();
+    this->Listen();
+
+    time(&curtime);
+    cout << "[Listen]:" << ctime(&curtime) << " Server start listening port " << port << endl;
 }
 
 void Server::Init() {
@@ -39,6 +45,10 @@ void Server::Listen() {
         fprintf(stderr, "[Listen Error]:%s %s\n\a", ctime(&curtime), strerror(errno));
         exit(1);
     }
+}
+
+int Server::getListenFd() {
+    return this->listen_fd;
 }
 
 int Server::AcceptConnection(ClientInfo & client_info) {

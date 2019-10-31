@@ -16,7 +16,6 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include <vector>
 #include <string.h>
 #include <algorithm>
 #include <ctime>
@@ -41,11 +40,13 @@ private:
     int listen_fd, listen_port, listen_size;
     sockaddr_in server_addr;
 public:
-    Server(int port = 5555, int size = 10);
+    Server(int port, int size);
 
     void Init();
 
     void Listen();
+
+    int getListenFd();
 
     int AcceptConnection(ClientInfo & client_info);
 

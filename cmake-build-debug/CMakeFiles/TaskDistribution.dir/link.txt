@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TaskDistribution.dir/taskdistribution/TaskDistribution_main.cpp.o CMakeFiles/TaskDistribution.dir/taskdistribution/src/distribution_server.cpp.o CMakeFiles/TaskDistribution.dir/src/client.cpp.o CMakeFiles/TaskDistribution.dir/src/server.cpp.o  -o TaskDistribution 
