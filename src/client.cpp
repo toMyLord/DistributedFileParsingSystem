@@ -12,13 +12,17 @@ Client::Client(char * server_ip, int server_port)
     struct hostent * host;
     if((host = gethostbyname(this->server_ip)) == NULL)
     {
-        fprintf(stderr, "The host name %s is illegal.\n", server_ip);
+        time_t curtime;
+        time(&curtime);
+        fprintf(stderr, "[Host Error]:%s The host name %s is illegal.\n", ctime(&curtime), server_ip);
         exit(1);
     }
 
     if((this->sock_fd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
     {
-        fprintf(stderr, "Init socket fd error!\n");
+        time_t curtime;
+        time(&curtime);
+        fprintf(stderr, "[Socket Error]:%s Init socket fd error!\n", ctime(&curtime));
         exit(1);
     }
 
@@ -41,21 +45,35 @@ int Client::Connect()
 
 int Client::Write(char * buff)
 {
-    int nbytes = write(this->sock_fd, buff, strlen(buff));
+    int nbytes = 0;
+    if ((nbytes = write(this->sock_fd, buff, strlen(buff))) == -1) {
+        time_t curtime;
+        time(&curtime);
+        fprintf(stderr, "[Write Error]:%s %s\n", ctime(&curtime), strerror(errno));
+    }
 
     return nbytes;
 }
 
 int Client::Read(char * buff)
 {
-    int nbytes = read(this->sock_fd, buff, MAX_BUFFER_SIZE);
-    buff[nbytes] = '\0';
+    int nbytes = 0;
+    if ((nbytes = read(this->sock_fd, buff, MAX_BUFFER_SIZE) == -1) {
+        time_t curtime;
+        time(&curtime);
+        fprintf(stderr, "[Write Error]:%s %s\n", ctime(&curtime), strerror(errno));
+    } else
+        buff[nbytes] = '\0';
 
     return nbytes;
 }
 
 int Client::Close()
 {
+    time_t curtime;
+
     close(this->sock_fd);
-    printf("fd-%d exit!\n", this->sock_fd);
+
+    time(&curtime);
+    printf("[Disconnected]:%s fd-%d exit!\n", ctime(&curtime), this->sock_fd);
 }

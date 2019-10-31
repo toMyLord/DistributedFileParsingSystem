@@ -19,6 +19,7 @@
 #include <vector>
 #include <string.h>
 #include <algorithm>
+#include <ctime>
 using namespace std;
 
 #ifndef MAX_BUFFER_SIZE

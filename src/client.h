@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <fstream>
+#include <ctime>
 
 #ifndef MAX_BUFFER_SIZE
 #define MAX_BUFFER_SIZE
