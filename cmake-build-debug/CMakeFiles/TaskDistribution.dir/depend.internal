@@ -4,14 +4,18 @@
 CMakeFiles/TaskDistribution.dir/src/client.cpp.o
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
 CMakeFiles/TaskDistribution.dir/src/server.cpp.o
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.cpp
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
 CMakeFiles/TaskDistribution.dir/taskdistribution/TaskDistribution_main.cpp.o
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/TaskDistribution_main.cpp
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.h
 CMakeFiles/TaskDistribution.dir/taskdistribution/src/distribution_server.cpp.o
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.cpp
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.h

@@ -33,7 +33,15 @@ string.h
 -
 algorithm
 -
-ctime
+specifictime.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
+sstream
+-
+string
+-
+time.h
 -
 
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/TaskDistribution_main.cpp

@@ -49,6 +49,8 @@ public:
 
     FileParsing(char * ip, int port = 6666);
 
+    void Init();
+
     inline void setState(State * s);
 
     void Handler();

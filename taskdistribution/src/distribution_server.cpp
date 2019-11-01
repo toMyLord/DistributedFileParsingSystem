@@ -37,7 +37,6 @@ int DistributionServer::Read(int sock_fd, char buff[]) {
 }
 
 int DistributionServer::Close(int sock_fd) {
-    time_t curtime;
     string ip;
     auto client_it = find_if(client_node.begin(), client_node.end(),
             [sock_fd](const ClientNode &cli){ return cli.client_info.client_fd == sock_fd; });
@@ -45,7 +44,4 @@ int DistributionServer::Close(int sock_fd) {
     client_node.erase(client_it);
 
     close(sock_fd);
-
-    time(&curtime);
-    cout << "[Disconnected]:" << ctime(&curtime) << "\t" << ip << " is disconnected, fd is " << sock_fd << endl;
 }

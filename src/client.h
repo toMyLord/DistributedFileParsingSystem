@@ -14,8 +14,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <fstream>
-#include <ctime>
-
+#include "specifictime.h"
 using namespace std;
 
 #ifndef MAX_BUFFER_SIZE

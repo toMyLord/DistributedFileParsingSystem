@@ -3,11 +3,14 @@
 
 CMakeFiles/WorkStation.dir/src/client.cpp.o: ../src/client.cpp
 CMakeFiles/WorkStation.dir/src/client.cpp.o: ../src/client.h
+CMakeFiles/WorkStation.dir/src/client.cpp.o: ../src/specifictime.h
 
 CMakeFiles/WorkStation.dir/src/server.cpp.o: ../src/server.cpp
 CMakeFiles/WorkStation.dir/src/server.cpp.o: ../src/server.h
+CMakeFiles/WorkStation.dir/src/server.cpp.o: ../src/specifictime.h
 
 CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../src/client.h
 CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../src/server.h
+CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../src/specifictime.h
 CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../workstation/WorkStation_main.cpp
 

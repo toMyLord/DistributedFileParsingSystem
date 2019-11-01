@@ -24,20 +24,24 @@ int main() {
     int epoll_fd = epoll_create(3);     //创建一个epoll的句柄，并告诉内核这个监听的数目为10
     int nfds;                               //记录需要处理的事件数
     ClientInfo manager_info;                //管理平台客户端的信息
+    SpecificTime st;
 
     ev.events = EPOLLIN | EPOLLET;          //linsten_fd可读，边缘触发
 
     //将用于接受工作站信息的连接监听fd加入epoll池中
     ev.data.fd = workstation_server.getListenFd();
     epoll_ctl(epoll_fd, EPOLL_CTL_ADD, workstation_server.getListenFd(), &ev);
+    cout << "[" << st.getTime().c_str() << " Listening WorkStation]:\tListen to WorkStation at port 5555." << endl;
 
     //将用于接受文件解析服务器信息的连接监听fd加入epoll池中
     ev.data.fd = parsing_server.getListenFd();
     epoll_ctl(epoll_fd, EPOLL_CTL_ADD, parsing_server.getListenFd(), &ev);
+    cout << "[" << st.getTime().c_str() << " Listening Parser]:\tListen to Parser at port 6666." << endl;
 
     //将用于接受管理平台的连接监听fd加入epoll池中
     ev.data.fd = manager_server.getListenFd();
     epoll_ctl(epoll_fd, EPOLL_CTL_ADD, manager_server.getListenFd(), &ev);
+    cout << "[" << st.getTime().c_str() << " Listening Manager]:\tListen to Manager at port 7777." << endl;
 
     while(true) {
         nfds = epoll_wait(epoll_fd, events, 10, -1);
@@ -52,6 +56,10 @@ int main() {
 
                 forward_t.detach();
 
+                cout << "[" << st.getTime().c_str() << " Connected WorkStation]:\tWorkstation "
+                    << workstation_node.client_info.client_ip << " is connected." << endl;
+
+
                 if(is_manager_connected == true) {
                     //通知管理平台有新上线的工作站.信息在workstation_node中
                 }
@@ -64,6 +72,10 @@ int main() {
                 ReadyParsingNode temp;
                 temp.parsing_fd = parsing_fd;
                 ready_parsing_queue.push(temp);
+
+                cout << "[" << st.getTime().c_str() << " Connected Parser]:\tParser "
+                     << parsing_node.client_info.client_ip << " is connected and added to queue." << endl;
+
 
                 if(is_manager_connected == true) {
                     //通知管理平台有新上线的文件解析服务器,信息在parsing_node中
@@ -93,6 +105,8 @@ int main() {
 void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
     char buffer[1024];
     int nbytes = 0;
+    SpecificTime st;
+
     while(true) {
         //等待工作站发来的文件解析请求
         if((nbytes = workstation_server.Read(workstation_fd, buffer)) <= 0) {
@@ -102,17 +116,14 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
 
         //对发送来的数据进行解析并根据就绪队列向文件解析服务器发送连接命令，如果就绪队列为空，就等待500ms
         if (strncmp(buffer, "ParsingRequest", 14) != 0) {
-            time_t curtime;
-            time(&curtime);
-            cout << "[Request Warning]:" << ctime(&curtime) <<
-                "\tTask distribution server cann't parse the request from workstation!" << endl;
+            cout << "[" << st.getTime().c_str() <<
+            " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
+
             continue;
         }
 
-        time_t curtime;
-        time(&curtime);
-        cout << "[Request Received]:" << ctime(&curtime) <<
-             "\tParsing request was received, start distributing!" << endl;
+        cout << "[" << st.getTime().c_str() <<
+             " Request Received]:\tParsing request was received, start distributing!" << endl;
 
         while(ready_parsing_queue.empty() == 1) {
             sleep(1);
@@ -138,11 +149,9 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
             break;
         }
         if (strncmp(buffer, "ParsingSuccess", 14) != 0) {
-            time_t curtime;
-            time(&curtime);
-            cout << "[Request Exception]:" << ctime(&curtime)
-                 << " Task distribution server didn't receive the parse completion signal!"
-                 << endl;
+            cout << "[" << st.getTime().c_str() <<
+                 " Request Exception]:\tTask distribution server didn't receive the parse completion signal!" << endl;
+
             parsing_server.Close(parsing_fd);
             continue;
         } else {
@@ -150,9 +159,9 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
             temp.parsing_fd = parsing_fd;
             ready_parsing_queue.push(temp);
 
-            time_t curtime;
-            time(&curtime);
-            cout << "[Parsing Success]:" << ctime(&curtime) << "\tParse file succeed!" << endl;
+            cout << "[" << st.getTime().c_str() <<
+                 " Parsing Success]:\tParse file succeed!" << endl;
+
 
             workstation_server.setState(workstation_fd, WATING);
             parsing_server.setState(parsing_fd, WATING);

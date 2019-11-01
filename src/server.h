@@ -18,7 +18,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <algorithm>
-#include <ctime>
+#include "specifictime.h"
 using namespace std;
 
 #ifndef MAX_BUFFER_SIZE

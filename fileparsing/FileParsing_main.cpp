@@ -8,7 +8,7 @@
 int main() {
     FileParsing file_parsing("127.0.0.1");
 
-    file_parsing.setState(new WatingState);
+    file_parsing.Init();
 
     while (true) {
         file_parsing.Handler();

@@ -12,17 +12,15 @@ Client::Client(char * server_ip, int server_port)
     struct hostent * host;
     if((host = gethostbyname(this->server_ip)) == NULL)
     {
-        time_t curtime;
-        time(&curtime);
-        fprintf(stderr, "[Host Error]:%s\tThe host name %s is illegal.\n", ctime(&curtime), server_ip);
+        SpecificTime st;
+        fprintf(stderr, "[%s Host Error]:\tThe host name %s is illegal.\n", st.getTime().c_str(), server_ip);
         exit(1);
     }
 
     if((this->sock_fd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
     {
-        time_t curtime;
-        time(&curtime);
-        fprintf(stderr, "[Socket Error]:%s\tInit socket fd error!\n", ctime(&curtime));
+        SpecificTime st;
+        fprintf(stderr, "[%s Socket Error]:\tInit socket fd error!\n", st.getTime().c_str());
         exit(1);
     }
 
@@ -47,9 +45,8 @@ int Client::Write(char * buff)
 {
     int nbytes = 0;
     if ((nbytes = write(this->sock_fd, buff, strlen(buff))) == -1) {
-        time_t curtime;
-        time(&curtime);
-        fprintf(stderr, "[Write Error]:%s\t%s\n", ctime(&curtime), strerror(errno));
+        SpecificTime st;
+        fprintf(stderr, "[%s Write Error]:\t%s\n", st.getTime().c_str(), strerror(errno));
     }
 
     return nbytes;
@@ -59,21 +56,14 @@ int Client::Read(char * buff)
 {
     int nbytes = 0;
     if ((nbytes = read(this->sock_fd, buff, MAX_BUFFER_SIZE)) == -1) {
-        time_t curtime;
-        time(&curtime);
-        fprintf(stderr, "[Read Error]:%s\t%s\n", ctime(&curtime), strerror(errno));
+        SpecificTime st;
+        fprintf(stderr, "[%s Read Error]:\t%s\n", st.getTime().c_str(), strerror(errno));
     } else
         buff[nbytes] = '\0';
 
     return nbytes;
 }
 
-int Client::Close()
-{
-    time_t curtime;
-
+int Client::Close() {
     close(this->sock_fd);
-
-    time(&curtime);
-    printf("[Disconnected]:%s\tfd-%d exit!\n", ctime(&curtime), this->sock_fd);
 }
