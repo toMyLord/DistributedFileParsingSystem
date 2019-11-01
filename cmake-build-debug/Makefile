@@ -203,33 +203,6 @@ fileparsing/src/file_parsing.cpp.s:
 	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.s
 .PHONY : fileparsing/src/file_parsing.cpp.s
 
-fileparsing/src/parsing_state.o: fileparsing/src/parsing_state.cpp.o
-
-.PHONY : fileparsing/src/parsing_state.o
-
-# target to build an object file
-fileparsing/src/parsing_state.cpp.o:
-	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o
-.PHONY : fileparsing/src/parsing_state.cpp.o
-
-fileparsing/src/parsing_state.i: fileparsing/src/parsing_state.cpp.i
-
-.PHONY : fileparsing/src/parsing_state.i
-
-# target to preprocess a source file
-fileparsing/src/parsing_state.cpp.i:
-	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.i
-.PHONY : fileparsing/src/parsing_state.cpp.i
-
-fileparsing/src/parsing_state.s: fileparsing/src/parsing_state.cpp.s
-
-.PHONY : fileparsing/src/parsing_state.s
-
-# target to generate assembly for a file
-fileparsing/src/parsing_state.cpp.s:
-	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.s
-.PHONY : fileparsing/src/parsing_state.cpp.s
-
 fileparsing/src/recording_log.o: fileparsing/src/recording_log.cpp.o
 
 .PHONY : fileparsing/src/recording_log.o
@@ -256,33 +229,6 @@ fileparsing/src/recording_log.s: fileparsing/src/recording_log.cpp.s
 fileparsing/src/recording_log.cpp.s:
 	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.s
 .PHONY : fileparsing/src/recording_log.cpp.s
-
-fileparsing/src/wating_state.o: fileparsing/src/wating_state.cpp.o
-
-.PHONY : fileparsing/src/wating_state.o
-
-# target to build an object file
-fileparsing/src/wating_state.cpp.o:
-	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o
-.PHONY : fileparsing/src/wating_state.cpp.o
-
-fileparsing/src/wating_state.i: fileparsing/src/wating_state.cpp.i
-
-.PHONY : fileparsing/src/wating_state.i
-
-# target to preprocess a source file
-fileparsing/src/wating_state.cpp.i:
-	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.i
-.PHONY : fileparsing/src/wating_state.cpp.i
-
-fileparsing/src/wating_state.s: fileparsing/src/wating_state.cpp.s
-
-.PHONY : fileparsing/src/wating_state.s
-
-# target to generate assembly for a file
-fileparsing/src/wating_state.cpp.s:
-	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.s
-.PHONY : fileparsing/src/wating_state.cpp.s
 
 src/client.o: src/client.cpp.o
 
@@ -448,15 +394,9 @@ help:
 	@echo "... fileparsing/src/file_parsing.o"
 	@echo "... fileparsing/src/file_parsing.i"
 	@echo "... fileparsing/src/file_parsing.s"
-	@echo "... fileparsing/src/parsing_state.o"
-	@echo "... fileparsing/src/parsing_state.i"
-	@echo "... fileparsing/src/parsing_state.s"
 	@echo "... fileparsing/src/recording_log.o"
 	@echo "... fileparsing/src/recording_log.i"
 	@echo "... fileparsing/src/recording_log.s"
-	@echo "... fileparsing/src/wating_state.o"
-	@echo "... fileparsing/src/wating_state.i"
-	@echo "... fileparsing/src/wating_state.s"
 	@echo "... src/client.o"
 	@echo "... src/client.i"
 	@echo "... src/client.s"

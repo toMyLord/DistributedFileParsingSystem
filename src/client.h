@@ -16,6 +16,8 @@
 #include <fstream>
 #include <ctime>
 
+using namespace std;
+
 #ifndef MAX_BUFFER_SIZE
 #define MAX_BUFFER_SIZE 1024
 #endif

@@ -185,22 +185,10 @@
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h">
 			<Option target="FileParsing"/>
 		</Unit>
-		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.cpp">
-			<Option target="FileParsing"/>
-		</Unit>
-		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.h">
-			<Option target="FileParsing"/>
-		</Unit>
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.cpp">
 			<Option target="FileParsing"/>
 		</Unit>
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h">
-			<Option target="FileParsing"/>
-		</Unit>
-		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.cpp">
-			<Option target="FileParsing"/>
-		</Unit>
-		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.h">
 			<Option target="FileParsing"/>
 		</Unit>
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp">

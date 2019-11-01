@@ -8,7 +8,7 @@ RecordingLog * RecordingLog::log_ptr;
 
 inline RecordingLog * RecordingLog::getLogInstance() {
     if(log_ptr == nullptr){
-        log_ptr = new RecordingLog;
+//        log_ptr = new RecordingLog();
     }
     return log_ptr;
 }

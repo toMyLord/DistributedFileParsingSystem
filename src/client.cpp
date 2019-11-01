@@ -61,7 +61,7 @@ int Client::Read(char * buff)
     if ((nbytes = read(this->sock_fd, buff, MAX_BUFFER_SIZE)) == -1) {
         time_t curtime;
         time(&curtime);
-        fprintf(stderr, "[Write Error]:%s\t%s\n", ctime(&curtime), strerror(errno));
+        fprintf(stderr, "[Read Error]:%s\t%s\n", ctime(&curtime), strerror(errno));
     } else
         buff[nbytes] = '\0';
 

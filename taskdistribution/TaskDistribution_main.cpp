@@ -17,7 +17,7 @@ bool is_manager_connected = false;              //记录管理平台是否连接
 int manager_fd;                                 //管理平台客户端的fd
 queue<ReadyParsingNode> ready_parsing_queue;    //需要加互斥锁
 
-void FileHandler_t(int workstation_fd);
+void FileHandler_t(int workstation_fd, const ClientNode & workstation_node);
 
 int main() {
     struct epoll_event ev, events[3];       //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
@@ -48,7 +48,7 @@ int main() {
                 ClientNode workstation_node;
                 int workstation_fd = workstation_server.AcceptConnection(workstation_node);
 
-                thread forward_t(FileHandler_t, workstation_fd);
+                thread forward_t(FileHandler_t, workstation_fd, workstation_node);
 
                 forward_t.detach();
 
@@ -59,10 +59,6 @@ int main() {
                 //有文件解析服务器连接至任务分配服务器
                 ClientNode parsing_node;
                 int parsing_fd = parsing_server.AcceptConnection(parsing_node);
-
-                thread forward_t(FileHandler_t, parsing_fd);
-
-                forward_t.detach();
 
                 //当有文件解析服务器加入任务分配服务器时，直接将其加入就绪队列
                 ReadyParsingNode temp;
@@ -94,7 +90,7 @@ int main() {
     }
 }
 
-void FileHandler_t(int workstation_fd) {
+void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
     char buffer[1024];
     int nbytes = 0;
     while(true) {
@@ -109,9 +105,15 @@ void FileHandler_t(int workstation_fd) {
             time_t curtime;
             time(&curtime);
             cout << "[Request Warning]:" << ctime(&curtime) <<
-                " Task distribution server cann't parse the request from workstation!" << endl;
+                "\tTask distribution server cann't parse the request from workstation!" << endl;
             continue;
         }
+
+        time_t curtime;
+        time(&curtime);
+        cout << "[Request Received]:" << ctime(&curtime) <<
+             "\tParsing request was received, start distributing!" << endl;
+
         while(ready_parsing_queue.empty() == 1) {
             sleep(1);
         }
@@ -119,7 +121,10 @@ void FileHandler_t(int workstation_fd) {
         int parsing_fd = ready_parsing_queue.front().parsing_fd;
         ready_parsing_queue.pop();
 
-        //构造好接口，buffer内需要有工作站的ip，端口等信息
+        //构造好接口，buffer内需要有工作站的ip信息,端口=8888
+        int lenth = workstation_node.client_info.client_ip.length();
+        workstation_node.client_info.client_ip.copy(buffer, lenth);
+        buffer[lenth] = '\0';
         parsing_server.Write(parsing_fd, buffer);
 
         workstation_server.setState(workstation_fd, TRANSIMITING);
@@ -129,7 +134,7 @@ void FileHandler_t(int workstation_fd) {
 
         //等待文件解析服务器发送的解析完成信息，并将此文件解析服务器重新送入就绪队列
         if((nbytes = parsing_server.Read(parsing_fd, buffer)) <= 0) {
-            parsing_server.Close(workstation_fd);
+            parsing_server.Close(parsing_fd);
             break;
         }
         if (strncmp(buffer, "ParsingSuccess", 14) != 0) {
@@ -144,6 +149,10 @@ void FileHandler_t(int workstation_fd) {
             ReadyParsingNode temp;
             temp.parsing_fd = parsing_fd;
             ready_parsing_queue.push(temp);
+
+            time_t curtime;
+            time(&curtime);
+            cout << "[Parsing Success]:" << ctime(&curtime) << "\tParse file succeed!" << endl;
 
             workstation_server.setState(workstation_fd, WATING);
             parsing_server.setState(parsing_fd, WATING);

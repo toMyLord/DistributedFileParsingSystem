@@ -3,29 +3,14 @@
 
 CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/FileParsing_main.cpp
 CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/src/file_parsing.h
-CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/src/parsing_state.h
-CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/src/recording_log.h
-CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/src/state.h
-CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/src/wating_state.h
+CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../src/client.h
 
 CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/file_parsing.cpp
 CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/file_parsing.h
-CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/parsing_state.h
-CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/recording_log.h
-CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/state.h
-CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/wating_state.h
-
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o: ../fileparsing/src/parsing_state.cpp
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o: ../fileparsing/src/parsing_state.h
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o: ../fileparsing/src/recording_log.h
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o: ../fileparsing/src/state.h
+CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../src/client.h
 
 CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o: ../fileparsing/src/recording_log.cpp
 CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o: ../fileparsing/src/recording_log.h
-
-CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o: ../fileparsing/src/state.h
-CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o: ../fileparsing/src/wating_state.cpp
-CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o: ../fileparsing/src/wating_state.h
 
 CMakeFiles/FileParsing.dir/src/client.cpp.o: ../src/client.cpp
 CMakeFiles/FileParsing.dir/src/client.cpp.o: ../src/client.h

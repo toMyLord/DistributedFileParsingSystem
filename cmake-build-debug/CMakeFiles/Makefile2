@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/mylord/Programs/CLionProjects/DistributedFileParsing/cm
 CMakeFiles/FileParsing.dir/all:
 	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/depend
 	$(MAKE) -f CMakeFiles/FileParsing.dir/build.make CMakeFiles/FileParsing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target FileParsing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target FileParsing"
 .PHONY : CMakeFiles/FileParsing.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/FileParsing.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FileParsing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FileParsing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/FileParsing.dir/rule
@@ -108,7 +108,7 @@ clean: CMakeFiles/FileParsing.dir/clean
 CMakeFiles/WorkStation.dir/all:
 	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/depend
 	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=14,15,16,17 "Built target WorkStation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15 "Built target WorkStation"
 .PHONY : CMakeFiles/WorkStation.dir/all
 
 # Include target in all.
@@ -145,7 +145,7 @@ clean: CMakeFiles/WorkStation.dir/clean
 CMakeFiles/TaskDistribution.dir/all:
 	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/depend
 	$(MAKE) -f CMakeFiles/TaskDistribution.dir/build.make CMakeFiles/TaskDistribution.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12,13 "Built target TaskDistribution"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=7,8,9,10,11 "Built target TaskDistribution"
 .PHONY : CMakeFiles/TaskDistribution.dir/all
 
 # Include target in all.

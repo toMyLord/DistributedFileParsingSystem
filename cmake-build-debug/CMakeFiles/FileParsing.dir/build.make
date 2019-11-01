@@ -83,22 +83,9 @@ CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.cpp -o CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.s
 
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o: CMakeFiles/FileParsing.dir/flags.make
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o: ../fileparsing/src/parsing_state.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.cpp
-
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.cpp > CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.i
-
-CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/parsing_state.cpp -o CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.s
-
 CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o: CMakeFiles/FileParsing.dir/flags.make
 CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o: ../fileparsing/src/recording_log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.cpp
 
 CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.i: cmake_force
@@ -109,22 +96,9 @@ CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.cpp -o CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.s
 
-CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o: CMakeFiles/FileParsing.dir/flags.make
-CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o: ../fileparsing/src/wating_state.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.cpp
-
-CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.cpp > CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.i
-
-CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/wating_state.cpp -o CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.s
-
 CMakeFiles/FileParsing.dir/src/client.cpp.o: CMakeFiles/FileParsing.dir/flags.make
 CMakeFiles/FileParsing.dir/src/client.cpp.o: ../src/client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/FileParsing.dir/src/client.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FileParsing.dir/src/client.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileParsing.dir/src/client.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
 
 CMakeFiles/FileParsing.dir/src/client.cpp.i: cmake_force
@@ -137,7 +111,7 @@ CMakeFiles/FileParsing.dir/src/client.cpp.s: cmake_force
 
 CMakeFiles/FileParsing.dir/src/server.cpp.o: CMakeFiles/FileParsing.dir/flags.make
 CMakeFiles/FileParsing.dir/src/server.cpp.o: ../src/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/FileParsing.dir/src/server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FileParsing.dir/src/server.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FileParsing.dir/src/server.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.cpp
 
 CMakeFiles/FileParsing.dir/src/server.cpp.i: cmake_force
@@ -152,9 +126,7 @@ CMakeFiles/FileParsing.dir/src/server.cpp.s: cmake_force
 FileParsing_OBJECTS = \
 "CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o" \
 "CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o" \
-"CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o" \
 "CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o" \
-"CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o" \
 "CMakeFiles/FileParsing.dir/src/client.cpp.o" \
 "CMakeFiles/FileParsing.dir/src/server.cpp.o"
 
@@ -163,14 +135,12 @@ FileParsing_EXTERNAL_OBJECTS =
 
 FileParsing: CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o
 FileParsing: CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o
-FileParsing: CMakeFiles/FileParsing.dir/fileparsing/src/parsing_state.cpp.o
 FileParsing: CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o
-FileParsing: CMakeFiles/FileParsing.dir/fileparsing/src/wating_state.cpp.o
 FileParsing: CMakeFiles/FileParsing.dir/src/client.cpp.o
 FileParsing: CMakeFiles/FileParsing.dir/src/server.cpp.o
 FileParsing: CMakeFiles/FileParsing.dir/build.make
 FileParsing: CMakeFiles/FileParsing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable FileParsing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable FileParsing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FileParsing.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
