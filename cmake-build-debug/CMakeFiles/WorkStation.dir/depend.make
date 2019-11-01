@@ -13,4 +13,10 @@ CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../src/client.h
 CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../src/server.h
 CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../src/specifictime.h
 CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../workstation/WorkStation_main.cpp
+CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o: ../workstation/src/send_directory.h
+
+CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.o: ../src/server.h
+CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.o: ../src/specifictime.h
+CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.o: ../workstation/src/send_directory.cpp
+CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.o: ../workstation/src/send_directory.h
 

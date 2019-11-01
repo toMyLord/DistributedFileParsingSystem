@@ -4,6 +4,7 @@
 
 #include "../src/server.h"
 #include "../src/client.h"
+#include "src/send_directory.h"
 
 int main() {
     Client distributer_client("127.0.0.1", 5555);
@@ -18,11 +19,18 @@ int main() {
 
     while(true) {
         ClientInfo parsing_info;
+        SendDirectory sd;
 
         //获取发文件的前提信息
         cout << "Please enter the directory you want to send:\t";
-        char buffer[MAX_BUFFER_SIZE];
-        gets(buffer);
+        string directory_path;
+        while(true) {
+            cin >> directory_path;
+            if(sd.setDir(directory_path) == true)
+                break;
+            else
+                cout << "Directory path is illegal, please enter again:\t";
+        }
 
         distributer_client.Write("ParsingRequest");
         int fd = parsing_server.AcceptConnection(parsing_info);
@@ -30,8 +38,7 @@ int main() {
         cout << "[" << st.getTime().c_str() << " Start Sending]:\tFile parser is connected and server started sending!" << endl;
 
         //文件发送过程
-
-
+        sd.sendDir(&parsing_server, fd);
 
         parsing_server.Close(fd);
         cout << "[" << st.getTime().c_str() << " Finished Sending]:\tFinished sending and close workstation server" << endl;

@@ -6,36 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
-client.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-netdb.h
--
-netinet/in.h
--
-sys/socket.h
--
-unistd.h
--
-iostream
--
-fstream
--
-specifictime.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.cpp
-server.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
-
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
 iostream
 -
@@ -74,9 +44,21 @@ string
 time.h
 -
 
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/WorkStation_main.cpp
-../src/server.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.cpp
+send_directory.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.h
+dirent.h
+-
+string
+-
+fstream
+-
+string.h
+-
+sstream
+-
+../../src/server.h
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
-../src/client.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
 

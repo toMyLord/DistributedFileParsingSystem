@@ -6,20 +6,18 @@
 
 #IncludeRegexTransform: 
 
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
-iostream
--
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
+client.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
 stdio.h
 -
 stdlib.h
 -
-errno.h
--
-string
+string.h
 -
 netdb.h
--
-sys/types.h
 -
 netinet/in.h
 -
@@ -27,11 +25,9 @@ sys/socket.h
 -
 unistd.h
 -
-arpa/inet.h
+iostream
 -
-string.h
--
-algorithm
+fstream
 -
 specifictime.h
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
@@ -42,21 +38,5 @@ sstream
 string
 -
 time.h
--
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/TaskDistribution_main.cpp
-src/distribution_server.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.h
-sys/epoll.h
--
-thread
--
-queue
--
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.h
-../../src/server.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
-vector
 -
 

@@ -4,11 +4,13 @@
 CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/FileParsing_main.cpp
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
 CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.cpp
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
 CMakeFiles/FileParsing.dir/fileparsing/src/recording_log.cpp.o

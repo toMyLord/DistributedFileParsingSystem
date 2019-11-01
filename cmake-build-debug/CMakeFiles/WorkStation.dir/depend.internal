@@ -14,3 +14,9 @@ CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
  /home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/WorkStation_main.cpp
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.h
+CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.o
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.cpp
+ /home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.h

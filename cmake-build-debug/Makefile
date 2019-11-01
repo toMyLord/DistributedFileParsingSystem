@@ -377,6 +377,33 @@ workstation/WorkStation_main.cpp.s:
 	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.s
 .PHONY : workstation/WorkStation_main.cpp.s
 
+workstation/src/send_directory.o: workstation/src/send_directory.cpp.o
+
+.PHONY : workstation/src/send_directory.o
+
+# target to build an object file
+workstation/src/send_directory.cpp.o:
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.o
+.PHONY : workstation/src/send_directory.cpp.o
+
+workstation/src/send_directory.i: workstation/src/send_directory.cpp.i
+
+.PHONY : workstation/src/send_directory.i
+
+# target to preprocess a source file
+workstation/src/send_directory.cpp.i:
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.i
+.PHONY : workstation/src/send_directory.cpp.i
+
+workstation/src/send_directory.s: workstation/src/send_directory.cpp.s
+
+.PHONY : workstation/src/send_directory.s
+
+# target to generate assembly for a file
+workstation/src/send_directory.cpp.s:
+	$(MAKE) -f CMakeFiles/WorkStation.dir/build.make CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.s
+.PHONY : workstation/src/send_directory.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -412,6 +439,9 @@ help:
 	@echo "... workstation/WorkStation_main.o"
 	@echo "... workstation/WorkStation_main.i"
 	@echo "... workstation/WorkStation_main.s"
+	@echo "... workstation/src/send_directory.o"
+	@echo "... workstation/src/send_directory.i"
+	@echo "... workstation/src/send_directory.s"
 .PHONY : help
 
 

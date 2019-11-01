@@ -34,6 +34,10 @@ public:
 
     int Connect();
 
+    char * getServerIP();
+
+    int getServerPort();
+
     int Write(char * buff);
 
     int Read(char * buff);

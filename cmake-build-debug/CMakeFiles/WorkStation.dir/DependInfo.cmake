@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir/src/client.cpp.o"
   "/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir/src/server.cpp.o"
   "/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/WorkStation_main.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir/workstation/WorkStation_main.cpp.o"
+  "/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir/workstation/src/send_directory.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

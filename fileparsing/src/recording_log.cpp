@@ -6,9 +6,10 @@
 
 RecordingLog * RecordingLog::log_ptr;
 
-inline RecordingLog * RecordingLog::getLogInstance() {
-    if(log_ptr == nullptr){
-//        log_ptr = new RecordingLog();
-    }
-    return log_ptr;
+RecordingLog::RecordingLog() : out_file("./file_parse.log", ios::app){
+
+}
+
+void RecordingLog::WriteLog(const string & log) {
+    out_file << log << endl;
 }

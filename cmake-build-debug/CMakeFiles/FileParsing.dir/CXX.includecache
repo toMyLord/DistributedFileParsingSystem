@@ -6,41 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.cpp
-file_parsing.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.cpp
+recording_log.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h
 
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/file_parsing.h
-../../src/client.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-netdb.h
--
-netinet/in.h
--
-sys/socket.h
--
-unistd.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/fileparsing/src/recording_log.h
+fstream
 -
 iostream
 -
-fstream
--
-specifictime.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
 sstream
 -
 string
--
-time.h
 -
 

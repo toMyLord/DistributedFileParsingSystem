@@ -40,6 +40,13 @@ int Client::Connect()
     return nbytes;
 }
 
+char * Client::getServerIP() {
+    return this->server_ip;
+}
+
+int Client::getServerPort() {
+    return this->server_port;
+}
 
 int Client::Write(char * buff)
 {

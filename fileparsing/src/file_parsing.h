@@ -6,6 +6,7 @@
 #define DISTRIBUTEDFILEPARSING_FILE_PARSING_H
 
 #include "../../src/client.h"
+#include "recording_log.h"
 
 class FileParsing;
 

@@ -3,11 +3,13 @@
 
 CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/FileParsing_main.cpp
 CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/src/file_parsing.h
+CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../fileparsing/src/recording_log.h
 CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../src/client.h
 CMakeFiles/FileParsing.dir/fileparsing/FileParsing_main.cpp.o: ../src/specifictime.h
 
 CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/file_parsing.cpp
 CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/file_parsing.h
+CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../fileparsing/src/recording_log.h
 CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../src/client.h
 CMakeFiles/FileParsing.dir/fileparsing/src/file_parsing.cpp.o: ../src/specifictime.h
 

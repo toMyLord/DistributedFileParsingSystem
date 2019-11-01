@@ -223,6 +223,12 @@
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/WorkStation_main.cpp">
 			<Option target="WorkStation"/>
 		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.cpp">
+			<Option target="WorkStation"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/workstation/src/send_directory.h">
+			<Option target="WorkStation"/>
+		</Unit>
 		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
