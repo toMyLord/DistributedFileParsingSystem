@@ -8,19 +8,29 @@
 #include "../../src/server.h"
 #include <vector>
 
+enum ClientState {WATING, TRANSIMITING};
+
+typedef struct {
+    ClientInfo client_info;
+    ClientState client_state;
+}ClientNode;
+
+
 class DistributionServer {
 private:
     Server server;
 
     //用来存储所有连接至任务分配服务器的工作站
-    vector<ClientInfo> client_info;
+    vector<ClientNode> client_node;
 
 public:
     DistributionServer(int port, int size);
 
     int getListenFd();
 
-    int AcceptConnection();
+    int AcceptConnection(ClientNode & client);
+
+    void setState(int sock_fd, ClientState state);
 
     int Write(int sock_fd, char buff[]);
 

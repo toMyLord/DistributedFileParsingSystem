@@ -3,13 +3,8 @@
 //
 #include "distribution_server.h"
 
-DistributionServer::DistributionServer(int port, int size) : server(port, size), client_info() {
-    time_t curtime;
-
+DistributionServer::DistributionServer(int port, int size) : server(port, size), client_node() {
     this->server.Listen();
-
-    time(&curtime);
-    cout << "[Listen]:" << ctime(&curtime) << " Task distribution server start listening port " << port << endl;
 }
 
 
@@ -17,14 +12,20 @@ int DistributionServer::getListenFd() {
     return this->server.getListenFd();
 }
 
-int DistributionServer::AcceptConnection() {
-    ClientInfo temp;
+int DistributionServer::AcceptConnection(ClientNode & client) {
+    int fd = server.AcceptConnection(client.client_info);
 
-    int fd = server.AcceptConnection(temp);
+    client.client_state = WATING;
 
-    client_info.push_back(temp);
+    client_node.push_back(client);
 
     return fd;
+}
+
+void DistributionServer::setState(int sock_fd, ClientState state) {
+    auto client_it = find_if(client_node.begin(), client_node.end(),
+                             [sock_fd](const ClientNode &cli){ return cli.client_info.client_fd == sock_fd; });
+    client_it->client_state = state;
 }
 
 int DistributionServer::Write(int sock_fd, char buff[]) {
@@ -38,13 +39,13 @@ int DistributionServer::Read(int sock_fd, char buff[]) {
 int DistributionServer::Close(int sock_fd) {
     time_t curtime;
     string ip;
-    auto client_it = find_if(client_info.begin(), client_info.end(),
-                             [sock_fd](const ClientInfo &cli){ return cli.client_fd == sock_fd; });
-    ip = client_it->client_ip;
-    client_info.erase(client_it);
+    auto client_it = find_if(client_node.begin(), client_node.end(),
+            [sock_fd](const ClientNode &cli){ return cli.client_info.client_fd == sock_fd; });
+    ip = client_it->client_info.client_ip;
+    client_node.erase(client_it);
 
     close(sock_fd);
 
     time(&curtime);
-    cout << "[Disconnected]:" << ctime(&curtime) << " " << ip << " is disconnected, fd is " << sock_fd << endl;
+    cout << "[Disconnected]:" << ctime(&curtime) << "\t" << ip << " is disconnected, fd is " << sock_fd << endl;
 }
