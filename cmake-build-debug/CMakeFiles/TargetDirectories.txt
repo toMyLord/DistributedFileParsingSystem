@@ -1,5 +1,0 @@
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/FileParsing.dir
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/WorkStation.dir
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/cmake-build-debug/CMakeFiles/TaskDistribution.dir
