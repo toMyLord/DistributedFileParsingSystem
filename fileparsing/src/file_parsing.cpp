@@ -77,7 +77,16 @@ void ParsingState::Handler(FileParsing * fp) {
 
     //对文件进行解析
     while(true) {
-        fp->getClient().Read(buffer);
+        if(workstation_client.Read(buffer) <= 0) {
+            cout <<"read0!"<<endl;
+            char buff[] = "ParsingSuccess";
+            fp->getClient().Write(buff);
+
+            cout << "[" << st.getTime().c_str() << " Finished Parsing]:\tFinished parsing and reported to task distributer server!" << endl;
+
+            fp->setState(fp->getWatingState());
+            return;
+        }
         if(strncmp(buffer, "SendDirFinished", 15) == 0)
             break;
 
@@ -86,13 +95,15 @@ void ParsingState::Handler(FileParsing * fp) {
         int slice_r = buff.find(';');
 
         string file_name = buff.substr(0, slice_l);
-        string file_8 = buff.substr(slice_l + 1, slice_r);
+        string file_8 = buff.substr(slice_l + 1, 8);
         int file_lenth = stoi(buff.substr(slice_r + 1));
 
         stringstream log;
         log << "[" << st.getTime().c_str() << " " << fp->getClient().getServerIP()
             << " " << fp->getClient().getServerPort() << "]:\t" << file_name
-            << file_8 << file_lenth << "bytes." << endl;
+            << "\t" << file_8 << "\t" << file_lenth << "bytes." << endl;
+
+        cout << log.str();
 
         RecordingLog::getLogInstance()->WriteLog(log.str());
     }
@@ -101,7 +112,6 @@ void ParsingState::Handler(FileParsing * fp) {
     fp->getClient().Write(buff);
 
     cout << "[" << st.getTime().c_str() << " Finished Parsing]:\tFinished parsing and reported to task distributer server!" << endl;
-
 
     fp->setState(fp->getWatingState());
 }

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="managerplatform"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\bin\;CMake Files\..\..\..\..\bin\Qt\;CMake Files\..\..\..\..\bin\Qt\5.12.5\;CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\;CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\;CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\;CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5\;CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Core\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="managerplatform">
+				<Option output="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+					<Add directory="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform"/>
+					<Add directory="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/include"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtCore"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/./mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 managerplatform"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="managerplatform/fast">
+				<Option output="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+					<Add directory="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform"/>
+					<Add directory="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/include"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtCore"/>
+					<Add directory="/home/mylord/bin/Qt/5.12.5/gcc_64/./mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 managerplatform/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="managerplatform_autogen">
+				<Option working_dir="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 managerplatform_autogen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/mocs_compilation.cpp">
+			<Option target="managerplatform"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.cpp">
+			<Option target="managerplatform"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.h">
+			<Option target="managerplatform"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.ui">
+			<Option target="managerplatform"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/main.cpp">
+			<Option target="managerplatform"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/../../../../bin/Qt/5.12.5/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\bin\Qt\5.12.5\gcc_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
