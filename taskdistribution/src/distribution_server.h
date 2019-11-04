@@ -8,7 +8,7 @@
 #include "../../src/server.h"
 #include <vector>
 
-enum ClientState {WATING, TRANSIMITING};
+enum ClientState {WAITING, TRANSIMITING};
 
 typedef struct {
     ClientInfo client_info;
@@ -37,6 +37,8 @@ public:
     int Read(int sock_fd, char buff[]);
 
     int Close(int sock_fd);
+
+    void getAllClientInfo(string & buff);
 };
 
 #endif //DISTRIBUTEDFILEPARSING_DISTRIBUTION_SERVER_H

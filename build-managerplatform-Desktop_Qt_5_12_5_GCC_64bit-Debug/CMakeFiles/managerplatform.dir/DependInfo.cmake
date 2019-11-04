@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles/managerplatform.dir/client_thread.cpp.o"
   "/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles/managerplatform.dir/dialog.cpp.o"
+  "/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o"
   "/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/main.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles/managerplatform.dir/main.cpp.o"
   "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/mocs_compilation.cpp" "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o"
   )

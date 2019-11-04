@@ -13,14 +13,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-aux_source_directory(../src CS_src)
-
 add_executable(managerplatform
   main.cpp
   dialog.cpp
   dialog.h
   dialog.ui
-  ${CS_sr}
+  client_thread.h
+  client_thread.cpp
+  ../src/client.h
+  ../src/client.cpp
 )
 
 target_link_libraries(managerplatform PRIVATE Qt5::Widgets)

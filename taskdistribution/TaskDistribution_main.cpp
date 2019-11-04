@@ -62,6 +62,11 @@ int main() {
 
                 if(is_manager_connected == true) {
                     //通知管理平台有新上线的工作站.信息在workstation_node中
+                    char buffer[1024];
+                    string buff("ws:");
+                    workstation_server.getAllClientInfo(buff);
+                    strcpy(buffer, buff.c_str());
+                    manager_server.Write(manager_fd, buffer);
                 }
             } else if(events[i].data.fd == parsing_server.getListenFd()) {
                 //有文件解析服务器连接至任务分配服务器
@@ -76,9 +81,13 @@ int main() {
                 cout << "[" << st.getTime().c_str() << " Connected Parser]:\tParser "
                      << parsing_node.client_info.client_ip << " is connected and added to queue." << endl;
 
-
                 if(is_manager_connected == true) {
                     //通知管理平台有新上线的文件解析服务器,信息在parsing_node中
+                    char buffer[1024];
+                    string buff("fp:");
+                    parsing_server.getAllClientInfo(buff);
+                    strcpy(buffer, buff.c_str());
+                    manager_server.Write(manager_fd, buffer);
                 }
             } else if(events[i].data.fd == manager_server.getListenFd()) {
                 //有文件管理平台连接至任务分配服务器
@@ -89,8 +98,25 @@ int main() {
 
                     is_manager_connected = true;
 
-                    //连接后需要向管理平台发送已经上线的所有工作站及文件解析服务器的信息
+                    cout << "[" << st.getTime().c_str() << " Connected Manager]:\tManager "
+                         << manager_info.client_ip << " is connected to Task Distributer." << endl;
 
+                    //连接后需要向管理平台发送已经上线的所有工作站及文件解析服务器的信息
+                    char buffer[1024];
+
+                    string buff("ws:");
+                    workstation_server.getAllClientInfo(buff);
+                    strcpy(buffer, buff.c_str());
+                    manager_server.Write(manager_fd, buffer);
+
+                    memset(buffer, 0, 1024);
+                    usleep(0);
+
+                    buff.clear();
+                    buff += "fp:";
+                    parsing_server.getAllClientInfo(buff);
+                    strcpy(buffer, buff.c_str());
+                    manager_server.Write(manager_fd, buffer);
                 }
 
             } else {
@@ -114,7 +140,7 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
             break;
         }
 
-        //对发送来的数据进行解析并根据就绪队列向文件解析服务器发送连接命令，如果就绪队列为空，就等待500ms
+        //对发送来的数据进行解析并根据就绪队列向文件解析服务器发送连接命令，如果就绪队列为空，就等待1s
         if (strncmp(buffer, "ParsingRequest", 14) != 0) {
             cout << "[" << st.getTime().c_str() <<
             " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
@@ -141,6 +167,21 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
         workstation_server.setState(workstation_fd, TRANSIMITING);
         parsing_server.setState(parsing_fd, TRANSIMITING);
         //向管理平台发送正在解析文件信息
+        char buffer[1024];
+
+        string buff("ws:");
+        workstation_server.getAllClientInfo(buff);
+        strcpy(buffer, buff.c_str());
+        manager_server.Write(manager_fd, buffer);
+
+        memset(buffer, 0, 1024);
+        usleep(0);
+
+        buff.clear();
+        buff += "fp:";
+        parsing_server.getAllClientInfo(buff);
+        strcpy(buffer, buff.c_str());
+        manager_server.Write(manager_fd, buffer);
 
 
         //等待文件解析服务器发送的解析完成信息，并将此文件解析服务器重新送入就绪队列
@@ -163,10 +204,24 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
                  " Parsing Success]:\tParse file succeed!" << endl;
 
 
-            workstation_server.setState(workstation_fd, WATING);
-            parsing_server.setState(parsing_fd, WATING);
+            workstation_server.setState(workstation_fd, WAITING);
+            parsing_server.setState(parsing_fd, WAITING);
             //向管理平台发送解析完成信息（工作站和解析服务器的）
 
+            buff.clear();
+            buff += "ws:";
+            workstation_server.getAllClientInfo(buff);
+            strcpy(buffer, buff.c_str());
+            manager_server.Write(manager_fd, buffer);
+
+            memset(buffer, 0, 1024);
+            usleep(0);
+
+            buff.clear();
+            buff += "fp:";
+            parsing_server.getAllClientInfo(buff);
+            strcpy(buffer, buff.c_str());
+            manager_server.Write(manager_fd, buffer);
         }
     }
 }

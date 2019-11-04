@@ -105,9 +105,57 @@ CMakeFiles/managerplatform.dir/dialog.cpp.o.provides: CMakeFiles/managerplatform
 CMakeFiles/managerplatform.dir/dialog.cpp.o.provides.build: CMakeFiles/managerplatform.dir/dialog.cpp.o
 
 
+CMakeFiles/managerplatform.dir/client_thread.cpp.o: CMakeFiles/managerplatform.dir/flags.make
+CMakeFiles/managerplatform.dir/client_thread.cpp.o: /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/managerplatform.dir/client_thread.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/managerplatform.dir/client_thread.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.cpp
+
+CMakeFiles/managerplatform.dir/client_thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/managerplatform.dir/client_thread.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.cpp > CMakeFiles/managerplatform.dir/client_thread.cpp.i
+
+CMakeFiles/managerplatform.dir/client_thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/managerplatform.dir/client_thread.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.cpp -o CMakeFiles/managerplatform.dir/client_thread.cpp.s
+
+CMakeFiles/managerplatform.dir/client_thread.cpp.o.requires:
+
+.PHONY : CMakeFiles/managerplatform.dir/client_thread.cpp.o.requires
+
+CMakeFiles/managerplatform.dir/client_thread.cpp.o.provides: CMakeFiles/managerplatform.dir/client_thread.cpp.o.requires
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/client_thread.cpp.o.provides.build
+.PHONY : CMakeFiles/managerplatform.dir/client_thread.cpp.o.provides
+
+CMakeFiles/managerplatform.dir/client_thread.cpp.o.provides.build: CMakeFiles/managerplatform.dir/client_thread.cpp.o
+
+
+CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o: CMakeFiles/managerplatform.dir/flags.make
+CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o: /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
+
+CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp > CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.i
+
+CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp -o CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.s
+
+CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.requires:
+
+.PHONY : CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.requires
+
+CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.provides: CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.requires
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.provides.build
+.PHONY : CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.provides
+
+CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.provides.build: CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o
+
+
 CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o: CMakeFiles/managerplatform.dir/flags.make
 CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o: managerplatform_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o"
 	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o -c /home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/mocs_compilation.cpp
 
 CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.i: cmake_force
@@ -133,6 +181,8 @@ CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o.pr
 managerplatform_OBJECTS = \
 "CMakeFiles/managerplatform.dir/main.cpp.o" \
 "CMakeFiles/managerplatform.dir/dialog.cpp.o" \
+"CMakeFiles/managerplatform.dir/client_thread.cpp.o" \
+"CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o" \
 "CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o"
 
 # External object files for target managerplatform
@@ -140,13 +190,15 @@ managerplatform_EXTERNAL_OBJECTS =
 
 managerplatform: CMakeFiles/managerplatform.dir/main.cpp.o
 managerplatform: CMakeFiles/managerplatform.dir/dialog.cpp.o
+managerplatform: CMakeFiles/managerplatform.dir/client_thread.cpp.o
+managerplatform: CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o
 managerplatform: CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o
 managerplatform: CMakeFiles/managerplatform.dir/build.make
 managerplatform: /home/mylord/bin/Qt/5.12.5/gcc_64/lib/libQt5Widgets.so.5.12.5
 managerplatform: /home/mylord/bin/Qt/5.12.5/gcc_64/lib/libQt5Gui.so.5.12.5
 managerplatform: /home/mylord/bin/Qt/5.12.5/gcc_64/lib/libQt5Core.so.5.12.5
 managerplatform: CMakeFiles/managerplatform.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable managerplatform"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable managerplatform"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/managerplatform.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -156,6 +208,8 @@ CMakeFiles/managerplatform.dir/build: managerplatform
 
 CMakeFiles/managerplatform.dir/requires: CMakeFiles/managerplatform.dir/main.cpp.o.requires
 CMakeFiles/managerplatform.dir/requires: CMakeFiles/managerplatform.dir/dialog.cpp.o.requires
+CMakeFiles/managerplatform.dir/requires: CMakeFiles/managerplatform.dir/client_thread.cpp.o.requires
+CMakeFiles/managerplatform.dir/requires: CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o.requires
 CMakeFiles/managerplatform.dir/requires: CMakeFiles/managerplatform.dir/managerplatform_autogen/mocs_compilation.cpp.o.requires
 
 .PHONY : CMakeFiles/managerplatform.dir/requires

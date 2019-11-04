@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/EWIEGA46WW/moc_client_thread.cpp
+../../../managerplatform/client_thread.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/EWIEGA46WW/moc_dialog.cpp
 ../../../managerplatform/dialog.h
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.h
@@ -15,14 +23,28 @@ QtCore/qmetatype.h
 -
 
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/mocs_compilation.cpp
+EWIEGA46WW/moc_client_thread.cpp
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/EWIEGA46WW/moc_client_thread.cpp
 EWIEGA46WW/moc_dialog.cpp
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen/EWIEGA46WW/moc_dialog.cpp
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.cpp
+client_thread.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.h
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.h
+QThread
+-
+../src/client.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
 
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.cpp
 dialog.h
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.h
 ./ui_dialog.h
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/./ui_dialog.h
+stdio.h
+-
 
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.h
 QDialog
@@ -31,10 +53,14 @@ QDialog
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/main.cpp
 dialog.h
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.h
-../src/client.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
+client_thread.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.h
 QApplication
 -
+
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
+client.h
+/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
 
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
 stdio.h
@@ -65,6 +91,10 @@ string
 -
 time.h
 -
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtCore/QThread
+qthread.h
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtCore/qthread.h
 
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtCore/QVariant
 qvariant.h
@@ -668,6 +698,16 @@ QtCore/qscopedpointer.h
 stdio.h
 -
 
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtCore/qthread.h
+QtCore/qobject.h
+-
+future
+-
+functional
+-
+limits.h
+-
+
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtCore/qtypeinfo.h
 QtCore/qglobal.h
 -
@@ -978,6 +1018,14 @@ QtGui/qcolor.h
 QtGui/qbrush.h
 -
 
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui/qpen.h
+QtGui/qtguiglobal.h
+-
+QtGui/qcolor.h
+-
+QtGui/qbrush.h
+-
+
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui/qpixelformat.h
 QtGui/qtguiglobal.h
 -
@@ -1032,6 +1080,62 @@ QtCore/qprocessordetection.h
 QtGui/qtguiglobal.h
 -
 QtCore/qprocessordetection.h
+-
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui/qtextcursor.h
+QtGui/qtguiglobal.h
+-
+QtCore/qstring.h
+-
+QtCore/qshareddata.h
+-
+QtGui/qtextformat.h
+-
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui/qtextdocument.h
+QtGui/qtguiglobal.h
+-
+QtCore/qobject.h
+-
+QtCore/qsize.h
+-
+QtCore/qrect.h
+-
+QtCore/qvariant.h
+-
+QtGui/qfont.h
+-
+QtCore/qurl.h
+-
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui/qtextformat.h
+QtGui/qtguiglobal.h
+-
+QtGui/qcolor.h
+-
+QtGui/qfont.h
+-
+QtCore/qshareddata.h
+-
+QtCore/qvector.h
+-
+QtCore/qvariant.h
+-
+QtGui/qpen.h
+-
+QtGui/qbrush.h
+-
+QtGui/qtextoption.h
+-
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui/qtextoption.h
+QtGui/qtguiglobal.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qchar.h
+-
+QtCore/qmetatype.h
 -
 
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtGui/qtgui-config.h
@@ -1098,6 +1202,20 @@ qapplication.h
 qdialog.h
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qdialog.h
 
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/QLabel
+qlabel.h
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/QTextBrowser
+qtextbrowser.h
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qtextbrowser.h
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qabstractscrollarea.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qapplication.h
 QtWidgets/qtwidgetsglobal.h
 -
@@ -1128,12 +1246,46 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qwidget.h
 -
 
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qframe.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qwidget.h
+-
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qlabel.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qsizepolicy.h
 QtWidgets/qtwidgetsglobal.h
 -
 QtCore/qobject.h
 -
 QtCore/qalgorithms.h
+-
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qtextbrowser.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qtextedit.h
+-
+QtCore/qurl.h
+-
+
+/home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qtextedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qabstractscrollarea.h
+-
+QtGui/qtextdocument.h
+-
+QtGui/qtextoption.h
+-
+QtGui/qtextcursor.h
+-
+QtGui/qtextformat.h
 -
 
 /home/mylord/bin/Qt/5.12.5/gcc_64/include/QtWidgets/qtwidgets-config.h
@@ -1182,5 +1334,9 @@ QtCore/QVariant
 QtWidgets/QApplication
 -
 QtWidgets/QDialog
+-
+QtWidgets/QLabel
+-
+QtWidgets/QTextBrowser
 -
 

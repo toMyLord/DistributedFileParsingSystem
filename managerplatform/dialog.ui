@@ -6,13 +6,59 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>582</width>
+    <height>282</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QTextBrowser" name="ParsingInfo">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>51</y>
+     <width>256</width>
+     <height>201</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>文件解析服务器:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>10</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>工作站:</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="WorkstationInfo">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>51</y>
+     <width>251</width>
+     <height>201</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

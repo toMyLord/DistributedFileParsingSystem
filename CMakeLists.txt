@@ -3,6 +3,8 @@ project(DistributedFileParsing)
 
 set(CMAKE_CXX_STANDARD 11)
 
+add_compile_options(-fno-elide-constructors)
+
 aux_source_directory(fileparsing/src FileParsing_src)
 aux_source_directory(taskdistribution/src TaskDistribution_src)
 aux_source_directory(workstation/src WorkStation_src)

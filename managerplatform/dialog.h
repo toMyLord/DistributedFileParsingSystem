@@ -17,5 +17,8 @@ public:
 
 private:
     Ui::Dialog *ui;
+
+public slots:
+    void ClientSlot(QString);
 };
 #endif // DIALOG_H

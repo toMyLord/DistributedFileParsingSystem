@@ -6,36 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp
-client.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-netdb.h
--
-netinet/in.h
--
-sys/socket.h
--
-unistd.h
--
-iostream
--
-fstream
--
-specifictime.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/specifictime.h
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.cpp
-server.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
-
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/src/server.h
 iostream
 -
@@ -83,10 +53,6 @@ thread
 -
 queue
 -
-
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.cpp
-distribution_server.h
-/home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.h
 
 /home/mylord/Programs/CLionProjects/DistributedFileParsing/taskdistribution/src/distribution_server.h
 ../../src/server.h

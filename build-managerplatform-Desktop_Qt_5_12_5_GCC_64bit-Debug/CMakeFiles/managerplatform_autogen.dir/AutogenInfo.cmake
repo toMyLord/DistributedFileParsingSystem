@@ -7,8 +7,8 @@ set(AM_CMAKE_CURRENT_SOURCE_DIR "/home/mylord/Programs/CLionProjects/Distributed
 set(AM_CMAKE_CURRENT_BINARY_DIR "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/")
 set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "/home/mylord/Programs/CLionProjects/DistributedFileParsing/build-managerplatform-Desktop_Qt_5_12_5_GCC_64bit-Debug/managerplatform_autogen")
-set(AM_SOURCES "/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.cpp;/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/main.cpp")
-set(AM_HEADERS "/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.h")
+set(AM_SOURCES "/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.cpp;/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.cpp;/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/main.cpp;/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp")
+set(AM_HEADERS "/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/client_thread.h;/home/mylord/Programs/CLionProjects/DistributedFileParsing/managerplatform/dialog.h;/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.h")
 # Qt environment
 set(AM_QT_VERSION_MAJOR "5")
 set(AM_QT_VERSION_MINOR "12")

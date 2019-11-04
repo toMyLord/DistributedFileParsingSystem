@@ -15,7 +15,7 @@ int DistributionServer::getListenFd() {
 int DistributionServer::AcceptConnection(ClientNode & client) {
     int fd = server.AcceptConnection(client.client_info);
 
-    client.client_state = WATING;
+    client.client_state = WAITING;
 
     client_node.push_back(client);
 
@@ -44,4 +44,13 @@ int DistributionServer::Close(int sock_fd) {
     client_node.erase(client_it);
 
     close(sock_fd);
+}
+
+void DistributionServer::getAllClientInfo(string & buff) {
+    for(auto a : client_node) {
+        buff += a.client_info.client_ip;
+        buff += '\t';
+        buff += a.client_state == WAITING ? "WAITING" : "TRANSIMITING";
+        buff += '\n';
+    }
 }

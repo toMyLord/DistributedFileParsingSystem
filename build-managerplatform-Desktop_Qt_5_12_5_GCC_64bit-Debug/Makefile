@@ -136,6 +136,33 @@ managerplatform_autogen/fast:
 	$(MAKE) -f CMakeFiles/managerplatform_autogen.dir/build.make CMakeFiles/managerplatform_autogen.dir/build
 .PHONY : managerplatform_autogen/fast
 
+client_thread.o: client_thread.cpp.o
+
+.PHONY : client_thread.o
+
+# target to build an object file
+client_thread.cpp.o:
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/client_thread.cpp.o
+.PHONY : client_thread.cpp.o
+
+client_thread.i: client_thread.cpp.i
+
+.PHONY : client_thread.i
+
+# target to preprocess a source file
+client_thread.cpp.i:
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/client_thread.cpp.i
+.PHONY : client_thread.cpp.i
+
+client_thread.s: client_thread.cpp.s
+
+.PHONY : client_thread.s
+
+# target to generate assembly for a file
+client_thread.cpp.s:
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/client_thread.cpp.s
+.PHONY : client_thread.cpp.s
+
 dialog.o: dialog.cpp.o
 
 .PHONY : dialog.o
@@ -162,6 +189,33 @@ dialog.s: dialog.cpp.s
 dialog.cpp.s:
 	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/dialog.cpp.s
 .PHONY : dialog.cpp.s
+
+home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.o: home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o
+
+.PHONY : home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.o
+
+# target to build an object file
+home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o:
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o
+.PHONY : home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.o
+
+home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.i: home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.i
+
+.PHONY : home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.i
+
+# target to preprocess a source file
+home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.i:
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.i
+.PHONY : home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.i
+
+home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.s: home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.s
+
+.PHONY : home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.s
+
+# target to generate assembly for a file
+home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.s:
+	$(MAKE) -f CMakeFiles/managerplatform.dir/build.make CMakeFiles/managerplatform.dir/home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.s
+.PHONY : home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.cpp.s
 
 main.o: main.cpp.o
 
@@ -227,9 +281,15 @@ help:
 	@echo "... managerplatform"
 	@echo "... edit_cache"
 	@echo "... managerplatform_autogen"
+	@echo "... client_thread.o"
+	@echo "... client_thread.i"
+	@echo "... client_thread.s"
 	@echo "... dialog.o"
 	@echo "... dialog.i"
 	@echo "... dialog.s"
+	@echo "... home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.o"
+	@echo "... home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.i"
+	@echo "... home/mylord/Programs/CLionProjects/DistributedFileParsing/src/client.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
