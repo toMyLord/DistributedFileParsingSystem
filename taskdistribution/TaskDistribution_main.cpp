@@ -5,6 +5,7 @@
 #include <sys/epoll.h>
 #include <thread>
 #include <queue>
+#include <mutex>
 
 typedef struct {
     int parsing_fd;
@@ -16,6 +17,7 @@ Server manager_server(7777, 1);
 bool is_manager_connected = false;              //记录管理平台是否连接
 int manager_fd;                                 //管理平台客户端的fd
 queue<ReadyParsingNode> ready_parsing_queue;    //需要加互斥锁
+mutex queue_mutex;                              //给就绪队列加的互斥锁
 
 void FileHandler_t(int workstation_fd, const ClientNode & workstation_node);
 
@@ -76,7 +78,10 @@ int main() {
                 //当有文件解析服务器加入任务分配服务器时，直接将其加入就绪队列
                 ReadyParsingNode temp;
                 temp.parsing_fd = parsing_fd;
+
+                queue_mutex.lock();
                 ready_parsing_queue.push(temp);
+                queue_mutex.unlock();
 
                 cout << "[" << st.getTime().c_str() << " Connected Parser]:\tParser "
                      << parsing_node.client_info.client_ip << " is connected and added to queue." << endl;
@@ -144,19 +149,22 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
         if (strncmp(buffer, "ParsingRequest", 14) != 0) {
             cout << "[" << st.getTime().c_str() <<
             " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
-
             continue;
         }
 
         cout << "[" << st.getTime().c_str() <<
              " Request Received]:\tParsing request was received, start distributing!" << endl;
 
-        while(ready_parsing_queue.empty() == 1) {
+        while(true) {
+            queue_mutex.lock();
+            if(ready_parsing_queue.empty() != 1)    //如果就绪队列不空，先不拿掉锁，等pop之后再取锁
+                break;
+            queue_mutex.unlock();
             sleep(1);
         }
-
         int parsing_fd = ready_parsing_queue.front().parsing_fd;
         ready_parsing_queue.pop();
+        queue_mutex.unlock();
 
         //构造好接口，buffer内需要有工作站的ip信息,端口=8888
         int lenth = workstation_node.client_info.client_ip.length();
@@ -166,6 +174,7 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
 
         workstation_server.setState(workstation_fd, TRANSIMITING);
         parsing_server.setState(parsing_fd, TRANSIMITING);
+
         //向管理平台发送正在解析文件信息
         char buffer[1024];
 
@@ -198,7 +207,10 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
         } else {
             ReadyParsingNode temp;
             temp.parsing_fd = parsing_fd;
+
+            queue_mutex.lock();
             ready_parsing_queue.push(temp);
+            queue_mutex.unlock();
 
             cout << "[" << st.getTime().c_str() <<
                  " Parsing Success]:\tParse file succeed!" << endl;
