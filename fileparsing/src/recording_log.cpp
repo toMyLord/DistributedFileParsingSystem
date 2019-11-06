@@ -4,7 +4,7 @@
 
 #include "recording_log.h"
 
-RecordingLog * RecordingLog::log_ptr;
+RecordingLog * RecordingLog::log_ptr = nullptr;
 
 RecordingLog::RecordingLog() : out_file("./file_parse.log", ios::app){
 
