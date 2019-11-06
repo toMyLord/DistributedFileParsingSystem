@@ -37,10 +37,9 @@ int DistributionServer::Read(int sock_fd, char buff[]) {
 }
 
 int DistributionServer::Close(int sock_fd) {
-    string ip;
     auto client_it = find_if(client_node.begin(), client_node.end(),
             [sock_fd](const ClientNode &cli){ return cli.client_info.client_fd == sock_fd; });
-    ip = client_it->client_info.client_ip;
+
     client_node.erase(client_it);
 
     close(sock_fd);
