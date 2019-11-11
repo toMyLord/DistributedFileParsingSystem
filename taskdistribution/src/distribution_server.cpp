@@ -26,6 +26,8 @@ int DistributionServer::AcceptConnection(ClientNode & client) {
     client_node.push_back(client);
 
     if(isthreaded == false) {
+        isthreaded = true;
+
         thread heartbeats_t(this->Heartbeats_t, this);
         heartbeats_t.detach();
     }
@@ -70,12 +72,13 @@ vector<ClientNode> DistributionServer::getClientNode() const {
 }
 
 void DistributionServer::SendHeartbeats(DistributionServer * server) {
-    //如果有连接，就每隔三秒发送一次心跳包。
-    while(!server->getClientNode().empty()) {
-        for (auto a : server->getClientNode()) {
-            server->Write(a.client_info.client_fd, "HeartBeats");
-        }
-        sleep(3);
+    //如果有连接，就每隔5秒发送一次心跳包。
+    while(true) {
+        if (!server->getClientNode().empty())
+            for (auto a : server->getClientNode())
+                server->Write(a.client_info.client_fd, "HeartBeats");
+
+        sleep(5);
     }
 }
 

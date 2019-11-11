@@ -134,6 +134,7 @@ int main() {
 
                     //连接后需要向管理平台发送已经上线的所有工作站及文件解析服务器的信息
                     SendFpInfo();
+                    usleep(0);
                     SendWsInfo();
                 }
 
@@ -179,9 +180,17 @@ void FpHandler_t() {
                 //从epoll池中删除该fd
                 fp_ev.data.fd = fp_events[i].data.fd;
                 epoll_ctl(fp_epoll_fd, EPOLL_CTL_DEL, fp_events[i].data.fd, &fp_ev);
+
+                cout << "[" << st.getTime().c_str() <<" Parser Close]:\tParser client exit! ip:"
+                     << parsing_server.getClientNode( fp_events[i].data.fd).client_info.client_ip
+                     << "\tfd:" << parsing_server.getClientNode( fp_events[i].data.fd).client_info.client_fd
+                     << endl;
+
+                continue;
             }
             if (strncmp(buffer, "HeartBeats", 10) == 0) {
                 //收到心跳包
+//                cout << "heartbeats by parser!" << endl;
 
             } else if (strncmp(buffer, "ParsingSuccess", 14) == 0) {
                 //收到成功解析回执
@@ -203,7 +212,8 @@ void FpHandler_t() {
             } else {
                 //无法解析接收内容
                 cout << "[" << st.getTime().c_str() <<
-                     " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
+                     " Reply Error]:\tTask distribution server cann't parse the reply information from parser : " <<
+                     buffer << endl;
             }
         }
     }
@@ -224,9 +234,17 @@ void WsHandler_t() {
                 //从epoll池中删除该fd
                 ws_ev.data.fd = ws_events[i].data.fd;
                 epoll_ctl(ws_epoll_fd, EPOLL_CTL_DEL, ws_events[i].data.fd, &ws_ev);
+
+                cout << "[" << st.getTime().c_str() <<" Workstation Close]:\tWorkStation client exit! ip:"
+                     << workstation_server.getClientNode( ws_events[i].data.fd).client_info.client_ip
+                     << "\tfd:" << workstation_server.getClientNode( ws_events[i].data.fd).client_info.client_fd
+                     << endl;
+
+                continue;
             }
             if (strncmp(buffer, "HeartBeats", 10) == 0) {
                 //收到心跳包
+//                cout << "heartbeats by workstation!" << endl;
 
             } else if (strncmp(buffer, "TransmitSuccess", 15) == 0) {
                 //收到成功解析回执
@@ -245,7 +263,8 @@ void WsHandler_t() {
             } else {
                 //无法解析接收内容
                 cout << "[" << st.getTime().c_str() <<
-                     " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
+                     " Reply Error]:\tTask distribution server cann't parse the reply information from workstation : " <<
+                     buffer << endl;
             }
         }
     }
@@ -283,5 +302,6 @@ void ParseRequestHandler_t(const int workstation_fd) {
 
     //向管理平台发送正在解析文件信息
     SendFpInfo();
+    usleep(0);
     SendWsInfo();
 }

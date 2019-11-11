@@ -53,11 +53,22 @@ void WatingState::Handler(FileParsing * fp) {
     SpecificTime st;
     cout << "[" << st.getTime().c_str() << " Waiting Tasks]:\tWating for tasks from task distributer server!" << endl;
 
-    if(fp->getClient().Read(buffer) <= 0) {
-        fp->getClient().Close();
-        return;
-    }
+    while(true) {
+        if (fp->getClient().Read(buffer) <= 0) {
+            fp->getClient().Close();
+            return;
+        }
+        if (strncmp(buffer, "HeartBeats", 10) == 0) {
+            //收到心跳包
+//            cout << "[" << st.getTime().c_str() <<
+//                 " Heart Beats]:\tReceived heart beats packet from distribution server!" << endl;
 
+            strcpy(buffer, "HeartBeats");
+            fp->getClient().Write(buffer);
+        } else {
+            break;
+        }
+    }
     strncpy(fp->workstation_ip, buffer, 16);
     fp->workstation_port = 8888;
 

@@ -38,4 +38,5 @@ add_executable(ManagerPlatform
         )
 
 target_link_libraries(TaskDistribution pthread)
+target_link_libraries(WorkStation pthread)
 target_link_libraries(ManagerPlatform PRIVATE Qt5::Widgets)
