@@ -14,7 +14,7 @@ DistributionServer workstation_server(5555, 10);
 DistributionServer parsing_server(6666, 10);
 Server manager_server(7777, 1);
 bool is_manager_connected = false;              //记录管理平台是否连接
-int manager_fd;                                 //管理平台客户端的fd
+int manager_fd = 0;                                 //管理平台客户端的fd
 queue<ReadyParsingNode> ready_parsing_queue;    //需要加互斥锁
 mutex queue_mutex;                              //给就绪队列加的互斥锁
 struct epoll_event fp_ev, fp_events[10];        //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
@@ -34,8 +34,8 @@ void WsHandler_t();
 void ParseRequestHandler_t(const int workstation_fd);
 
 int main() {
-    struct epoll_event ev, events[3];       //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
-    int listen_epoll_fd = epoll_create(3);     //创建一个epoll的句柄，并告诉内核这个监听的数目为3
+    struct epoll_event ev, events[4];       //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
+    int listen_epoll_fd = epoll_create(4);     //创建一个epoll的句柄，并告诉内核这个监听的数目为3
     int nfds;                               //记录需要处理的事件数
     ClientInfo manager_info;                //管理平台客户端的信息
     bool isFpThreaded = false;              //标记接受心跳线程是否建立
@@ -129,19 +129,34 @@ int main() {
 
                     is_manager_connected = true;
 
+                    //将manager platform加入listenepoll池，用来检测是否主动断开
+                    ev.data.fd = manager_fd;
+                    epoll_ctl(listen_epoll_fd, EPOLL_CTL_ADD, manager_fd, &ev);
+
                     cout << "[" << st.getTime().c_str() << " Connected Manager]:\tManager "
                          << manager_info.client_ip << " is connected to Task Distributer." << endl;
 
                     //连接后需要向管理平台发送已经上线的所有工作站及文件解析服务器的信息
                     SendFpInfo();
-                    usleep(0);
+                    usleep(1);
                     SendWsInfo();
                 }
+            } else if(events[i].data.fd == manager_fd && manager_fd != 0) {
+                char buffer[MAX_BUFFER_SIZE];
+                if(manager_server.Read(manager_fd, buffer) == 0) {
+                    //管理平台断开
+                    manager_server.Close(manager_fd);
 
+                    is_manager_connected = false;
+
+                    cout << "[" << st.getTime().c_str() <<
+                        " Manager Disconnected]:\tManager platform disconnected from distributer server." << endl;
+                } else {
+                    cout << "[" << st.getTime().c_str() <<
+                         " Manager Info]:\tReceived information from Manager platform :" << buffer << endl;
+                }
             } else {
-                time_t curtime;
-                time(&curtime);
-                cout << "[Epoll Error]:" << ctime(&curtime) << " no corresponding Epoll event found" << endl;
+                cout << "[" << st.getTime().c_str() << " Epoll Error]:\tNo corresponding Epoll event was found." << endl;
             }
         }
     }
@@ -302,6 +317,6 @@ void ParseRequestHandler_t(const int workstation_fd) {
 
     //向管理平台发送正在解析文件信息
     SendFpInfo();
-    usleep(0);
+    usleep(1);
     SendWsInfo();
 }
