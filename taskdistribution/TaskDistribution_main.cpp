@@ -174,6 +174,7 @@ void FpHandler_t() {
             if (parsing_server.Read(fp_events[i].data.fd, buffer) == 0) {
                 //收到close请求
                 parsing_server.Close(fp_events[i].data.fd);
+                SendFpInfo();
 
                 //从epoll池中删除该fd
                 fp_ev.data.fd = fp_events[i].data.fd;
@@ -218,6 +219,7 @@ void WsHandler_t() {
             if (workstation_server.Read(ws_events[i].data.fd, buffer) == 0) {
                 //收到close请求
                 workstation_server.Close(ws_events[i].data.fd);
+                SendWsInfo();
 
                 //从epoll池中删除该fd
                 ws_ev.data.fd = ws_events[i].data.fd;
