@@ -7,8 +7,9 @@
 
 #include "../../src/server.h"
 #include <vector>
+#include <thread>
 
-enum ClientState {WAITING, TRANSIMITING};
+enum ClientState {WAITING, TRANSMITING};
 
 typedef struct {
     ClientInfo client_info;
@@ -23,10 +24,14 @@ private:
     //用来存储所有连接至任务分配服务器的工作站
     vector<ClientNode> client_node;
 
+    bool isthreaded;
+
 public:
     DistributionServer(int port, int size);
 
     int getListenFd();
+
+    ClientNode getClientNode(int fd) const;
 
     int AcceptConnection(ClientNode & client);
 
@@ -38,7 +43,14 @@ public:
 
     int Close(int sock_fd);
 
+    vector<ClientNode> getClientNode() const;
+
     void getAllClientInfo(string & buff);
+
+    void SendHeartbeats(DistributionServer * server);
+
+    static void Heartbeats_t(DistributionServer * server);
+
 };
 
 #endif //DISTRIBUTEDFILEPARSING_DISTRIBUTION_SERVER_H

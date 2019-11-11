@@ -3,7 +3,6 @@
 //
 #include "src/distribution_server.h"
 #include <sys/epoll.h>
-#include <thread>
 #include <queue>
 #include <mutex>
 
@@ -18,39 +17,54 @@ bool is_manager_connected = false;              //记录管理平台是否连接
 int manager_fd;                                 //管理平台客户端的fd
 queue<ReadyParsingNode> ready_parsing_queue;    //需要加互斥锁
 mutex queue_mutex;                              //给就绪队列加的互斥锁
+struct epoll_event fp_ev, fp_events[10];        //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
+struct epoll_event ws_ev, ws_events[10];        //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
+int fp_epoll_fd, ws_epoll_fd;
+SpecificTime st;
 
-void FileHandler_t(int workstation_fd, const ClientNode & workstation_node);
 
 void SendFpInfo();
 
 void SendWsInfo();
 
+void FpHandler_t();
+
+void WsHandler_t();
+
+void ParseRequestHandler_t(const int workstation_fd);
+
 int main() {
     struct epoll_event ev, events[3];       //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
-    int epoll_fd = epoll_create(3);     //创建一个epoll的句柄，并告诉内核这个监听的数目为10
+    int listen_epoll_fd = epoll_create(3);     //创建一个epoll的句柄，并告诉内核这个监听的数目为3
     int nfds;                               //记录需要处理的事件数
     ClientInfo manager_info;                //管理平台客户端的信息
-    SpecificTime st;
+    bool isFpThreaded = false;              //标记接受心跳线程是否建立
+    bool isWsThreaded = false;              //标记接受心跳线程是否建立
+
+    fp_epoll_fd = epoll_create(10);
+    ws_epoll_fd = epoll_create(10);
 
     ev.events = EPOLLIN | EPOLLET;          //linsten_fd可读，边缘触发
+    fp_ev.events = EPOLLIN;                 //linsten_fd可读，水平触发
+    ws_ev.events = EPOLLIN;                 //linsten_fd可读，水平触发
 
     //将用于接受工作站信息的连接监听fd加入epoll池中
     ev.data.fd = workstation_server.getListenFd();
-    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, workstation_server.getListenFd(), &ev);
+    epoll_ctl(listen_epoll_fd, EPOLL_CTL_ADD, workstation_server.getListenFd(), &ev);
     cout << "[" << st.getTime().c_str() << " Listening WorkStation]:\tListen to WorkStation at port 5555." << endl;
 
     //将用于接受文件解析服务器信息的连接监听fd加入epoll池中
     ev.data.fd = parsing_server.getListenFd();
-    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, parsing_server.getListenFd(), &ev);
+    epoll_ctl(listen_epoll_fd, EPOLL_CTL_ADD, parsing_server.getListenFd(), &ev);
     cout << "[" << st.getTime().c_str() << " Listening Parser]:\tListen to Parser at port 6666." << endl;
 
     //将用于接受管理平台的连接监听fd加入epoll池中
     ev.data.fd = manager_server.getListenFd();
-    epoll_ctl(epoll_fd, EPOLL_CTL_ADD, manager_server.getListenFd(), &ev);
+    epoll_ctl(listen_epoll_fd, EPOLL_CTL_ADD, manager_server.getListenFd(), &ev);
     cout << "[" << st.getTime().c_str() << " Listening Manager]:\tListen to Manager at port 7777." << endl;
 
     while(true) {
-        nfds = epoll_wait(epoll_fd, events, 10, -1);
+        nfds = epoll_wait(listen_epoll_fd, events, 10, -1);
         for(int i = 0; i < nfds; i++){
             if(events[i].data.fd == workstation_server.getListenFd()) {
                 //有工作站连接至任务分配服务器
@@ -58,9 +72,15 @@ int main() {
                 ClientNode workstation_node;
                 int workstation_fd = workstation_server.AcceptConnection(workstation_node);
 
-                thread forward_t(FileHandler_t, workstation_fd, workstation_node);
+                //将新连接的工作站加入epoll池
+                ws_ev.data.fd =  workstation_fd;
+                epoll_ctl(ws_epoll_fd, EPOLL_CTL_ADD, workstation_fd, &ws_ev);
 
-                forward_t.detach();
+                if (isWsThreaded == false) {
+                    isWsThreaded = true;
+                    thread ws_t(WsHandler_t);
+                    ws_t.detach();
+                }
 
                 cout << "[" << st.getTime().c_str() << " Connected WorkStation]:\tWorkstation "
                     << workstation_node.client_info.client_ip << " is connected." << endl;
@@ -82,6 +102,16 @@ int main() {
                 queue_mutex.lock();
                 ready_parsing_queue.push(temp);
                 queue_mutex.unlock();
+
+                //将新连接的文件解析服务器加入epoll池
+                fp_ev.data.fd =  parsing_fd;
+                epoll_ctl(fp_epoll_fd, EPOLL_CTL_ADD, parsing_fd, &fp_ev);
+
+                if (isFpThreaded == false) {
+                    isFpThreaded = true;
+                    thread fp_t(FpHandler_t);
+                    fp_t.detach();
+                }
 
                 cout << "[" << st.getTime().c_str() << " Connected Parser]:\tParser "
                      << parsing_node.client_info.client_ip << " is connected and added to queue." << endl;
@@ -135,81 +165,121 @@ void SendWsInfo() {
 }
 
 
-void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
-    char buffer[1024];
-    int nbytes = 0;
-    SpecificTime st;
+void FpHandler_t() {
+    char buffer[MAX_BUFFER_SIZE];
 
     while(true) {
-        //等待工作站发来的文件解析请求
-        if((nbytes = workstation_server.Read(workstation_fd, buffer)) <= 0) {
-            workstation_server.Close(workstation_fd);
-            break;
-        }
+        int nfds = epoll_wait(fp_epoll_fd, fp_events, 10, -1);
+        for (int i = 0; i < nfds; i++) {
+            if (parsing_server.Read(fp_events[i].data.fd, buffer) == 0) {
+                //收到close请求
+                parsing_server.Close(fp_events[i].data.fd);
 
-        //对发送来的数据进行解析并根据就绪队列向文件解析服务器发送连接命令，如果就绪队列为空，就等待1s
-        if (strncmp(buffer, "ParsingRequest", 14) != 0) {
-            cout << "[" << st.getTime().c_str() <<
-            " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
-            continue;
-        }
+                //从epoll池中删除该fd
+                fp_ev.data.fd = fp_events[i].data.fd;
+                epoll_ctl(fp_epoll_fd, EPOLL_CTL_DEL, fp_events[i].data.fd, &fp_ev);
+            }
+            if (strncmp(buffer, "HeartBeats", 10) == 0) {
+                //收到心跳包
 
-        cout << "[" << st.getTime().c_str() <<
-             " Request Received]:\tParsing request was received, start distributing!" << endl;
+            } else if (strncmp(buffer, "ParsingSuccess", 14) == 0) {
+                //收到成功解析回执
+                ReadyParsingNode temp;
 
-        while(true) {
-            queue_mutex.lock();
-            if(ready_parsing_queue.empty() != 1)    //如果就绪队列不空，先不拿掉锁，等pop之后再取锁
-                break;
-            queue_mutex.unlock();
-            sleep(1);
-        }
-        int parsing_fd = ready_parsing_queue.front().parsing_fd;
-        ready_parsing_queue.pop();
-        queue_mutex.unlock();
+                temp.parsing_fd = fp_events[i].data.fd;
 
-        //构造好接口，buffer内需要有工作站的ip信息,端口默认=8888
-        int lenth = workstation_node.client_info.client_ip.length();
-        workstation_node.client_info.client_ip.copy(buffer, lenth);
-        buffer[lenth] = '\0';
-        parsing_server.Write(parsing_fd, buffer);
+                queue_mutex.lock();
+                ready_parsing_queue.push(temp);
+                queue_mutex.unlock();
 
-        workstation_server.setState(workstation_fd, TRANSIMITING);
-        parsing_server.setState(parsing_fd, TRANSIMITING);
+                parsing_server.setState(fp_events[i].data.fd, WAITING);
 
-        //向管理平台发送正在解析文件信息
-        SendFpInfo();
-        SendWsInfo();
+                cout << "[" << st.getTime().c_str() <<
+                     " Parsing Success]:\tParse file succeed!" << endl;
 
-        //等待文件解析服务器发送的解析完成信息，并将此文件解析服务器重新送入就绪队列
-        if((nbytes = parsing_server.Read(parsing_fd, buffer)) <= 0) {
-            parsing_server.Close(parsing_fd);
-            break;
-        }
-        if (strncmp(buffer, "ParsingSuccess", 14) != 0) {
-            cout << "[" << st.getTime().c_str() <<
-                 " Request Exception]:\tTask distribution server didn't receive the parse completion signal!" << endl;
-
-            parsing_server.Close(parsing_fd);
-            continue;
-        } else {
-            ReadyParsingNode temp;
-            temp.parsing_fd = parsing_fd;
-
-            queue_mutex.lock();
-            ready_parsing_queue.push(temp);
-            queue_mutex.unlock();
-
-            cout << "[" << st.getTime().c_str() <<
-                 " Parsing Success]:\tParse file succeed!" << endl;
-
-
-            workstation_server.setState(workstation_fd, WAITING);
-            parsing_server.setState(parsing_fd, WAITING);
-            //向管理平台发送解析完成信息（工作站和解析服务器的）
-
-            SendWsInfo();
-            SendFpInfo();
+                //向管理平台发送解析完成信息
+                SendFpInfo();
+            } else {
+                //无法解析接收内容
+                cout << "[" << st.getTime().c_str() <<
+                     " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
+            }
         }
     }
+}
+
+
+void WsHandler_t() {
+    char buffer[MAX_BUFFER_SIZE];
+
+    while(true) {
+        int nfds = epoll_wait(ws_epoll_fd, ws_events, 10, -1);
+        for (int i = 0; i < nfds; i++) {
+            if (workstation_server.Read(ws_events[i].data.fd, buffer) == 0) {
+                //收到close请求
+                workstation_server.Close(ws_events[i].data.fd);
+
+                //从epoll池中删除该fd
+                ws_ev.data.fd = ws_events[i].data.fd;
+                epoll_ctl(ws_epoll_fd, EPOLL_CTL_DEL, ws_events[i].data.fd, &ws_ev);
+            }
+            if (strncmp(buffer, "HeartBeats", 10) == 0) {
+                //收到心跳包
+
+            } else if (strncmp(buffer, "TransmitSuccess", 15) == 0) {
+                //收到成功解析回执
+
+                workstation_server.setState(ws_events[i].data.fd, WAITING);
+
+                cout << "[" << st.getTime().c_str() <<
+                     " Transmit Success]:\tWorkStation transmit files succeed!" << endl;
+
+                SendWsInfo();
+            } else if (strncmp(buffer, "ParsingRequest", 14) == 0) {
+                //有来自工作站的解析请求。可能存在就绪队列空而导致长时间等待的情况因此要用线程的方式处理解析请求。
+                int workstation_fd = ws_events[i].data.fd;
+                thread parse_t(ParseRequestHandler_t, workstation_fd);
+                parse_t.detach();
+            } else {
+                //无法解析接收内容
+                cout << "[" << st.getTime().c_str() <<
+                     " Request Warning]:\tTask distribution server cann't parse the request from workstation!" << endl;
+            }
+        }
+    }
+}
+
+
+void ParseRequestHandler_t(const int workstation_fd) {
+    char buffer[MAX_BUFFER_SIZE];
+
+    //对发送来的数据进行解析并根据就绪队列向文件解析服务器发送连接命令，如果就绪队列为空，就等待1s
+    cout << "[" << st.getTime().c_str() <<
+         " Request Received]:\tParsing request was received, start distributing!" << endl;
+
+    while(true) {
+        queue_mutex.lock();
+        if(ready_parsing_queue.empty() != 1)    //如果就绪队列不空，先不拿掉锁，等pop之后再取锁
+            break;
+        queue_mutex.unlock();
+        sleep(1);
+    }
+
+    int parsing_fd = ready_parsing_queue.front().parsing_fd;
+    ready_parsing_queue.pop();
+    queue_mutex.unlock();
+
+    ClientNode workstation_node = workstation_server.getClientNode(workstation_fd);
+    //构造好接口，buffer内需要有工作站的ip信息,端口默认=8888
+    int lenth = workstation_node.client_info.client_ip.length();
+    workstation_node.client_info.client_ip.copy(buffer, lenth);
+    buffer[lenth] = '\0';
+    parsing_server.Write(parsing_fd, buffer);
+
+    workstation_server.setState(workstation_fd, TRANSMITING);
+    parsing_server.setState(parsing_fd, TRANSMITING);
+
+    //向管理平台发送正在解析文件信息
+    SendFpInfo();
+    SendWsInfo();
 }
