@@ -21,6 +21,10 @@ mutex queue_mutex;                              //给就绪队列加的互斥锁
 
 void FileHandler_t(int workstation_fd, const ClientNode & workstation_node);
 
+void SendFpInfo();
+
+void SendWsInfo();
+
 int main() {
     struct epoll_event ev, events[3];       //声明epoll_event结构体的变量,ev用于注册事件,数组用于回传要处理的事件
     int epoll_fd = epoll_create(3);     //创建一个epoll的句柄，并告诉内核这个监听的数目为10
@@ -64,11 +68,7 @@ int main() {
 
                 if(is_manager_connected == true) {
                     //通知管理平台有新上线的工作站.信息在workstation_node中
-                    char buffer[1024];
-                    string buff("ws:");
-                    workstation_server.getAllClientInfo(buff);
-                    strcpy(buffer, buff.c_str());
-                    manager_server.Write(manager_fd, buffer);
+                    SendWsInfo();
                 }
             } else if(events[i].data.fd == parsing_server.getListenFd()) {
                 //有文件解析服务器连接至任务分配服务器
@@ -88,11 +88,7 @@ int main() {
 
                 if(is_manager_connected == true) {
                     //通知管理平台有新上线的文件解析服务器,信息在parsing_node中
-                    char buffer[1024];
-                    string buff("fp:");
-                    parsing_server.getAllClientInfo(buff);
-                    strcpy(buffer, buff.c_str());
-                    manager_server.Write(manager_fd, buffer);
+                   SendFpInfo();
                 }
             } else if(events[i].data.fd == manager_server.getListenFd()) {
                 //有文件管理平台连接至任务分配服务器
@@ -107,21 +103,8 @@ int main() {
                          << manager_info.client_ip << " is connected to Task Distributer." << endl;
 
                     //连接后需要向管理平台发送已经上线的所有工作站及文件解析服务器的信息
-                    char buffer[1024];
-
-                    string buff("ws:");
-                    workstation_server.getAllClientInfo(buff);
-                    strcpy(buffer, buff.c_str());
-                    manager_server.Write(manager_fd, buffer);
-
-                    memset(buffer, 0, 1024);
-                    usleep(0);
-
-                    buff.clear();
-                    buff += "fp:";
-                    parsing_server.getAllClientInfo(buff);
-                    strcpy(buffer, buff.c_str());
-                    manager_server.Write(manager_fd, buffer);
+                    SendFpInfo();
+                    SendWsInfo();
                 }
 
             } else {
@@ -132,6 +115,25 @@ int main() {
         }
     }
 }
+
+
+void SendFpInfo() {
+    char sender[1024];
+    string buff("fp:");
+    parsing_server.getAllClientInfo(buff);
+    strcpy(sender, buff.c_str());
+    manager_server.Write(manager_fd, sender);
+}
+
+
+void SendWsInfo() {
+    char sender[1024];
+    string buff("ws:");
+    workstation_server.getAllClientInfo(buff);
+    strcpy(sender, buff.c_str());
+    manager_server.Write(manager_fd, sender);
+}
+
 
 void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
     char buffer[1024];
@@ -166,7 +168,7 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
         ready_parsing_queue.pop();
         queue_mutex.unlock();
 
-        //构造好接口，buffer内需要有工作站的ip信息,端口=8888
+        //构造好接口，buffer内需要有工作站的ip信息,端口默认=8888
         int lenth = workstation_node.client_info.client_ip.length();
         workstation_node.client_info.client_ip.copy(buffer, lenth);
         buffer[lenth] = '\0';
@@ -176,22 +178,8 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
         parsing_server.setState(parsing_fd, TRANSIMITING);
 
         //向管理平台发送正在解析文件信息
-        char buffer[1024];
-
-        string buff("ws:");
-        workstation_server.getAllClientInfo(buff);
-        strcpy(buffer, buff.c_str());
-        manager_server.Write(manager_fd, buffer);
-
-        memset(buffer, 0, 1024);
-        usleep(0);
-
-        buff.clear();
-        buff += "fp:";
-        parsing_server.getAllClientInfo(buff);
-        strcpy(buffer, buff.c_str());
-        manager_server.Write(manager_fd, buffer);
-
+        SendFpInfo();
+        SendWsInfo();
 
         //等待文件解析服务器发送的解析完成信息，并将此文件解析服务器重新送入就绪队列
         if((nbytes = parsing_server.Read(parsing_fd, buffer)) <= 0) {
@@ -220,20 +208,8 @@ void FileHandler_t(int workstation_fd, const ClientNode & workstation_node) {
             parsing_server.setState(parsing_fd, WAITING);
             //向管理平台发送解析完成信息（工作站和解析服务器的）
 
-            buff.clear();
-            buff += "ws:";
-            workstation_server.getAllClientInfo(buff);
-            strcpy(buffer, buff.c_str());
-            manager_server.Write(manager_fd, buffer);
-
-            memset(buffer, 0, 1024);
-            usleep(0);
-
-            buff.clear();
-            buff += "fp:";
-            parsing_server.getAllClientInfo(buff);
-            strcpy(buffer, buff.c_str());
-            manager_server.Write(manager_fd, buffer);
+            SendWsInfo();
+            SendFpInfo();
         }
     }
 }
