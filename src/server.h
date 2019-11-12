@@ -52,6 +52,8 @@ public:
     int Read(int sock_fd, char buff[]);
 
     int Close(int client_fd);
+
+    virtual ~Server() = default;
 };
 
 

@@ -43,6 +43,8 @@ public:
     int Read(char * buff);
 
     int Close();
+
+    virtual ~Client() = default;
 };
 
 #endif //DISTRIBUTEDFILEPARSING_CLIENT_H
