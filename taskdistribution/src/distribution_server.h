@@ -33,7 +33,7 @@ public:
 
     ClientNode getClientNode(int fd) const;
 
-    int AcceptConnection(ClientNode & client);
+    int AcceptConnection(ClientNode & client);  //增加了心跳机制
 
     void setState(int sock_fd, ClientState state);
 
