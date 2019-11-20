@@ -19,7 +19,7 @@ typedef struct {
 
 class DistributionServer {
 private:
-    Server server;          //选择聚合的方式，因为这里是“根据某物实现出”的理念
+    Server server;          //选择聚合的方式，因为这里是“根据某物实现出(is-implemented-in-terms-of)”的理念
 
     //用来存储所有连接至任务分配服务器的工作站
     vector<ClientNode> client_node;
